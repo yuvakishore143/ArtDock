@@ -14,9 +14,19 @@ function App() {
      < Header/>
        <Router>
          <Switch>
-            <Route exact path='/'><Main/></Route>
+             <Route exact path='/'><Main/></Route>
             <Route path='/Login'><Login/></Route>
             <Route path='/Home'><Home/></Route>
+          
+            {/* <Route exact path='*'>
+              <h1 >page not found</h1>
+              {
+                <>
+                 { alert('page not found')}
+                </>
+              }
+
+            </Route> */}
          </Switch>
           
         
