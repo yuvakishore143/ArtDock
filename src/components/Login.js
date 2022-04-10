@@ -1,6 +1,11 @@
+
+import './cssfiles/Login.css'
+
+
+
 const Login = () => {
     return ( 
-        <h2>login page</h2>
+        <h2 className="login-main">login page</h2>
      );
 }
  

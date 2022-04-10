@@ -7,7 +7,7 @@ const Header = () => {
       <>
       
       <div className='anchor'>
-              <a  href='/' className='tittle'>BitArt</a>
+              <a  href='/' className='tittle'>Art Dock</a>
               <div> 
               <a href='/Home' className='anchors'>Home</a>   
               <a href='/login' className='anchors'>Login</a>

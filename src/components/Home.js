@@ -1,26 +1,29 @@
 import { useEffect, useState } from "react";
 
 import { db } from '../firebase'
-import Avatar from '@material-ui/core/Avatar'
 
+
+import './cssfiles/Home.css'
+import Posts from "../partials/Posts";
 
 const Home = () => {
     const [ posts ,setPosts ]=useState([
-        {
-            username:'yuva',
-            caption:'i love nature',
-            id:3
-        }
-    ])
+       
+    ]);
+
+    useEffect(()=>{
+        db.collection('posts').onSnapshot(snapshot=>{
+            setPosts(snapshot.docs.map(doc=> doc.data()))
+        })
+    },[])
     return ( 
         <>
-        <h1>hwllo qoels</h1>
-        <Avatar
-          className="post_avatar"
-          alt='yuva'
-          src="/static/images/avatar/1.jpg"
-        />
-          
+    {
+        posts.map(post=>(
+            <Posts username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+        ))
+    }
+     
         </>
         
      );

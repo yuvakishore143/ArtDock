@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Main from './components/Main';
 import Header from "./partials/Header"
-
+import Profile from './components/Profile'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
              <Route exact path='/'><Main/></Route>
             <Route path='/Login'><Login/></Route>
             <Route path='/Home'><Home/></Route>
-          
+            <Route path='/Profile'><Profile/></Route>
             {/* <Route exact path='*'>
               <h1 >page not found</h1>
               {
