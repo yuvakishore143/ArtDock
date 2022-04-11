@@ -5,6 +5,7 @@ import { db } from '../firebase'
 
 import './cssfiles/Home.css'
 import Posts from "../partials/Posts";
+import Header from "../partials/Header";
 
 const Home = () => {
     const [ posts ,setPosts ]=useState([
@@ -18,6 +19,7 @@ const Home = () => {
     },[])
     return ( 
         <>
+        <Header/>
     {
         posts.map(post=>(
             <Posts username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>

@@ -11,10 +11,10 @@ import Profile from './components/Profile'
 function App() {
   return (
     <div className="App">
-     < Header/>
+    
        <Router>
          <Switch>
-             <Route exact path='/'><Main/></Route>
+            <Route exact path='/'><Main/></Route>
             <Route path='/Login'><Login/></Route>
             <Route path='/Home'><Home/></Route>
             <Route path='/Profile'><Profile/></Route>

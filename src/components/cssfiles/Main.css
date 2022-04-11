@@ -1,0 +1,107 @@
+.main_blog{
+   color:white;
+   width:66px;
+   font-size: 25px;
+   display:flex;
+   margin-left: 693px;
+   padding: 1px;
+   position: absolute;
+}
+.main_blog:hover{
+    /* color:rgb(148, 172, 204); */
+    border-bottom : 1px solid white;
+    cursor:pointer;
+  }
+
+
+
+.main_art{
+    
+    position: absolute;
+    width:220px;
+    font-size: 25px;
+    display:flex;
+    /* color:rgb(112, 148, 204); */
+    color:white;
+    margin-left:393px;
+}
+    .main_art:hover{
+      /* color:rgb(148, 172, 204); */
+      border-bottom : 1px solid white;
+      cursor:pointer;
+    }
+
+    body{
+        background-color:black;
+        
+    }
+
+    .main_title1{
+        font-size: 150px;
+        color:white;
+        margin:210px 0px 0px 395px ;
+
+    }
+    .main_title2{
+        color:white;
+        font-size: 190px;
+        margin:-50px 0px 0px 380px ;
+    }
+
+    .main_combo{
+     display: flex;
+    
+
+    }
+
+    .main_image{
+        position: absolute;
+        width:fit-content;
+        max-width: 500px;
+        margin: -380px 0px 0px 1000px;
+    }
+
+    .main_blog_info{
+        position: absolute;
+        font-size: 40px;
+        color:white;
+        font-family: Greyton Script;
+        margin-top:250px;
+        margin-left:393px ;
+        width:700px
+    }
+
+   .main_sb_info{
+    position: absolute;
+    font-size: 40px;
+    color:white;
+    font-family: Greyton Script;
+    margin-top:570px;
+    margin-left:393px ;
+    width:700px
+   }
+
+   .main_posts_info{
+    position: absolute;
+    font-size: 40px;
+    color:white;
+    font-family: Greyton Script;
+    margin-top:890px;
+    margin-left:393px ;
+    width:700px
+   }
+
+   .main_security_info{
+    position: absolute;
+    font-size: 40px;
+    color:white;
+    font-family: Greyton Script;
+    margin-top:1190px;
+    margin-left:393px ;
+    width:700px
+   }
+
+
+   .main_info_title{
+    font-family: Segoe UI;
+   }
