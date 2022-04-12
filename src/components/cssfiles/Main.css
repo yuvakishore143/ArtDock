@@ -6,6 +6,9 @@
    margin-left: 693px;
    padding: 1px;
    position: absolute;
+   text-decoration: none;
+   margin-top: 16px;
+   font-weight: bold;
 }
 .main_blog:hover{
     /* color:rgb(148, 172, 204); */
@@ -24,10 +27,13 @@
     /* color:rgb(112, 148, 204); */
     color:white;
     margin-left:393px;
+    font-weight: bold;
+    margin-top:15px;
+    text-decoration: none;
 }
     .main_art:hover{
       /* color:rgb(148, 172, 204); */
-      border-bottom : 1px solid white;
+      border-bottom : 2px solid white;
       cursor:pointer;
     }
 

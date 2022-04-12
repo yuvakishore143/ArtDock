@@ -1,6 +1,13 @@
+import Header from "../partials/Header";
+import './cssfiles/Profile.css'
+
 const Profile = () => {
     return (
-        <h1>profile</h1>
+      <>
+      <Header/>
+      <h2 className="profile_main">profile</h2>
+      </>
+      
       );
 }
  

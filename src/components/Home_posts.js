@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { db } from '../firebase'
 
 
-import './cssfiles/Home.css'
+import './cssfiles/Home_posts.css'
 import Posts from "../partials/Posts";
 import Header from "../partials/Header";
 
-const Home = () => {
+const Home_posts = () => {
     const [ posts ,setPosts ]=useState([
        
     ]);
@@ -31,4 +31,4 @@ const Home = () => {
      );
 }
  
-export default Home;
+export default Home_posts ;

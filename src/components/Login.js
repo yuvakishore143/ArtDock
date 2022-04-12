@@ -1,11 +1,16 @@
 
+import Header from '../partials/Header';
 import './cssfiles/Login.css'
 
 
 
 const Login = () => {
-    return ( 
+    return (
+        <>
+        <Header/>
         <h2 className="login-main">login page</h2>
+        </>
+        
      );
 }
  
