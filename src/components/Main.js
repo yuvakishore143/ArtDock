@@ -1,6 +1,6 @@
 import React from 'react';
 import "./cssfiles/Main.css"
-
+import { Link } from 'react-router-dom';
 
 const Main = ({  backgroundColor , ui , syntax }) => {
 
@@ -9,8 +9,8 @@ const Main = ({  backgroundColor , ui , syntax }) => {
         <h1 className='main_title1'>ART </h1>
         <h1 className='main_title2'>DOCK</h1>
         <div className='main_combo'>
-        <a href="/Home_posts"  className='main_art'>Browse for the Art</a>
-        <a href='/Home_blogs'  className="main_blog">Blogs</a>
+        <Link to="/Home_posts"  className='main_art'>Browse for the Art</Link>
+        <Link to='/Home_blogs'  className="main_blog">Blogs</Link>
         </div>
         <img className='main_image' src='photo-1511548774318-563182fe8d03.jpg'></img>
         {/* <div className='main_line'></div> */}
