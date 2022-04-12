@@ -1,6 +1,6 @@
 
 
-import {BrowserRouter as  Router,Switch,Route } from 'react-router-dom';
+import {BrowserRouter as  Router, Routes ,Route } from 'react-router-dom';
 import './App.css';
 import Home_posts from './components/Home_posts';
 import Login from './components/Login';
@@ -13,24 +13,14 @@ function App() {
     <div className="App">
     
        <Router>
-         <Switch>
-            <Route exact path='/'><Main/></Route>
-            <Route path='/Login'><Login/></Route>
-            <Route path='/Home_posts'><Home_posts/></Route>
-            <Route path='/Home_blogs'><Home_blogs/></Route>
-            <Route path='/Profile'><Profile/></Route>
-            {/* <Route exact path='*'>
-              <h1 >page not found</h1>
-              {
-                <>
-                 { alert('page not found')}
-                </>
-              }
-
-            </Route> */}
-         </Switch>
-          
-        
+         <Routes>
+            <Route exact path='/' element={ <Main/> }></Route>
+            <Route path='/Login'element={<Login/>}></Route>
+            <Route path='/Home_posts' element={ <Home_posts/> }></Route>
+            <Route path='/Home_blogs' element={ <Home_blogs/>}></Route>
+            <Route path='/Profile' element={ <Profile/>}></Route>
+            
+         </Routes>
        </Router>
        
     </div>
