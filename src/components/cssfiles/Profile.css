@@ -1,6 +1,60 @@
-.profile_main{
+
+.profile_container{
+    padding:30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 90px;
+    transform: translate(-50%,-50%) ;
+    flex-direction: column;
     color:white;
+    height: 70%;
+    width:50%;
+    background-color:#ffffff10;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter:blur(20px)
+  
+   
+}
+
+.liked_posts {
+    display: flex;
+    margin-top: 100px;
+    border-bottom: 2px solid silver;
+    background-color: yellow;
+}
+
+.img_name{
+    display:flex;
+    justify-content: space-around;
+ 
+}
+.btn{
+    position: absolute;
+    bottom: 20px;
+    padding:10px 30px;
+    left: 43%;
+
+
+}
+.btn:hover{
+    color:white;
+    background-color:red;
+    
+}
+
+.liked{
+    position: absolute;
+    left: 450px;
+}
+.posts{
+    position: absolute;
+    left: 200px;
+}
+.posts:hover{
+    border-bottom: 2px solid silver;
+    cursor:pointer;
+    font-weight: bold;
 }

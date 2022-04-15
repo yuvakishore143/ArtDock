@@ -19,7 +19,9 @@ function App() {
             <Route path='/Home_posts' element={ <Home_posts/> }></Route>
             <Route path='/Home_blogs' element={ <Home_blogs/>}></Route>
             <Route path='/Profile' element={ <Profile/>}></Route>
+            <Route exact path="*" element={<h1>page not found</h1>}>
             
+              </Route>
          </Routes>
        </Router>
        

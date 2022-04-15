@@ -1,9 +1,13 @@
+
+@media  ( min-width: 760px){
+    
+
 .main_blog{
-   color:white;
+   color:rgb(255, 255, 255);
    width:66px;
    font-size: 25px;
    display:flex;
-   margin-left: 693px;
+   margin-left: 35%;
    padding: 1px;
    position: absolute;
    text-decoration: none;
@@ -12,7 +16,7 @@
 }
 .main_blog:hover{
     /* color:rgb(148, 172, 204); */
-    border-bottom : 1px solid white;
+    border-bottom : 2px solid white;
     cursor:pointer;
   }
 
@@ -26,7 +30,7 @@
     display:flex;
     /* color:rgb(112, 148, 204); */
     color:white;
-    margin-left:393px;
+    margin-left:11%;
     font-weight: bold;
     margin-top:15px;
     text-decoration: none;
@@ -45,13 +49,15 @@
     .main_title1{
         font-size: 150px;
         color:white;
-        margin:210px 0px 0px 395px ;
+        /* margin:210px 0px 0px 395px ; */
+        margin:9%  0% 0% 11%;
 
     }
     .main_title2{
         color:white;
         font-size: 190px;
-        margin:-50px 0px 0px 380px ;
+        /* margin:-50px 0px 0px 380px ; */
+        margin: -2% 0px 0px 10%;
     }
 
     .main_combo{
@@ -64,7 +70,9 @@
         position: absolute;
         width:fit-content;
         max-width: 500px;
-        margin: -380px 0px 0px 1000px;
+        /* margin: -380px 0px 0px 1000px; */
+        margin: -25% 0px 0px 52%;
+        background-color: red;
     }
 
     .main_blog_info{
@@ -111,3 +119,7 @@
    .main_info_title{
     font-family: Segoe UI;
    }
+
+}
+
+  
