@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 const Main = ({  backgroundColor , ui , syntax }) => {
 
     return (
-      <>
-   
+      <div className='main_whole'>
+            
+            <div className="main_box">
             <div className="main_title">
                <h1 className='main_title1'>ART </h1>
                <h1 className='main_title2'>DOCK</h1>
             </div>
             <img className='main_image' src='photo-1511548774318-563182fe8d03.jpg'></img>
-        
+            </div>
         <div className='main_combo'>
         <Link to="/Home_posts"  className='main_art'>Browse for the Art</Link>
         <Link to='/Home_blogs'  className="main_blog">Blogs</Link>
@@ -42,7 +43,7 @@ const Main = ({  backgroundColor , ui , syntax }) => {
           You dont have to worry about security because all the payment transcations are made with paytm and by
           other trusted companies.
        </div>
-      </> 
+      </div> 
       );
 
    

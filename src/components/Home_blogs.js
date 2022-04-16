@@ -3,10 +3,10 @@ import './cssfiles/Home_blogs.css'
 
 const Home_blogs = () => {
     return ( 
-        <>
+        <div className="blogs_whole">
          <Header/>
         <h1>blogs</h1>
-        </>
+        </div>
        
      );
 }

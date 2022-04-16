@@ -3,7 +3,7 @@
      display: flex;
      flex-direction: column;
      margin-top: 100px;
-     max-width: 600px;
+     max-width: 500px;
      background-color: #fafafa;
      border:1px solid lightgray;
      margin-left: 60px;
@@ -11,9 +11,10 @@
 }
 
 .post_img{
-  width:100%;
-  
-  object-fit: contain; 
+ 
+
+  max-width: 500px;
+  max-height: 400px;
   
 }
 

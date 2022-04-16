@@ -1,4 +1,4 @@
-.login_form{
+.register_form{
     display: flex;
     width: 500px;
     height: 400px;
@@ -16,17 +16,7 @@
  
 }
 
-.login_email{
-  margin:20px;
-  padding: 5px 30px 5px 10px;
-  width: 250px;
-  border-radius: 6px;
-
-
-}
-
-
-.login_password{
+.register_email{
   margin:20px;
   padding: 5px 30px 5px 10px;
   width: 250px;
@@ -34,17 +24,31 @@
 }
 
 
-.login_btn{
+.register_password{
+  margin:20px;
+  padding: 5px 30px 5px 10px;
+  width: 250px;
+  border-radius: 6px;
+}
+
+.register_username {
+  width: 250px;
+  margin:20px;
+  padding: 5px 30px 5px 10px;
+  border-radius: 6px;
+}
+
+.register_btn{
  
   width: 100px;
-  padding: 7px 50px 7px 28px;
-  
+  padding: 7px 50px 7px 22px;
+  text-decoration: none;
   border-radius: 10px;
   font-weight: bold;
 }
 
 
-.login_title{
+.register_title{
   display: flex;
   color:red;
   justify-content: center;
@@ -52,9 +56,9 @@
   margin:20px
 }
 
-.login_link{
+.register_link{
   margin:9px ;
 }
-.login_link:hover{
+.register_link:hover{
   color:skyblue;
 }
