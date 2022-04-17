@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import Header from "../partials/Header";
 import './cssfiles/UploadPosts.css';
 import { addDoc, collection } from 'firebase/firestore'
 import { auth, db } from "../firebase";
 import firebase from "firebase/compat/app";
-import { getStorage,ref,uploadBytesResumable,getDownloadURL } from 'firebase/storage'
+import { ref,uploadBytesResumable,getDownloadURL } from 'firebase/storage'
 import {storage} from '../firebase'
 
 const UploadPosts = () => {
 
-  const [image,setImage]=useState('')
+  
   const [caption ,setCaption]=useState('')
   const [progress,setProgress]=useState(0)
   const [user,setUser]=useState('')
-  const [imageUrl , setImageUrl]= useState('')
+  
 
   useEffect (()=>{
     auth.onAuthStateChanged((authUser)=>{
@@ -22,12 +21,11 @@ const UploadPosts = () => {
   })
     
   
-  const handleChange=(e)=>{
-      e.preventDefault();
-      
-          const file = e.target.files[0];
-          handleUpload(file)
-      
+    const formHandler = (e) =>{
+        e.preventDefault();
+          const file = e.target[0].files[0];
+          
+        handleUpload(file)
   }
 
   const handleUpload = (file)=>{
@@ -64,11 +62,14 @@ const UploadPosts = () => {
     return ( 
 
         <div className="upladposts_whole">
-            
-            <input type='file' onChange={handleChange} ></input>
-            <input type='text' placeholder="Type the caption..." onChange={(e)=>setCaption(e.target.value)} ></input>
-            <button >Upload</button>
-            <h3>uploaded { progress }% </h3>
+                <form onSubmit={formHandler}>
+                <input type='file'  ></input>
+                <input type='text' placeholder="Type the caption..." onChange={(e)=>setCaption(e.target.value)} ></input>
+                <button type="submit" >Upload</button>
+                <h3>uploaded { progress }% </h3>
+                </form>
+               
+           
         </div>
         
 
