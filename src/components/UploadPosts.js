@@ -5,14 +5,17 @@ import { auth, db } from "../firebase";
 import firebase from "firebase/compat/app";
 import { ref,uploadBytesResumable,getDownloadURL } from 'firebase/storage'
 import {storage} from '../firebase'
+import { Modal } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 
-const UploadPosts = () => {
+const UploadPosts = ({ open , toggle } ) => {
 
   
   const [caption ,setCaption]=useState('')
   const [progress,setProgress]=useState(0)
   const [user,setUser]=useState('')
   
+ const navigator = useNavigate()
 
   useEffect (()=>{
     auth.onAuthStateChanged((authUser)=>{
@@ -24,17 +27,16 @@ const UploadPosts = () => {
     const formHandler = (e) =>{
         e.preventDefault();
           const file = e.target[0].files[0];
-          
-        handleUpload(file)
+           handleUpload(file)
   }
 
   const handleUpload = (file)=>{
 
     if(!file)return;
     const storageRef = ref(storage, `/images/${file.name}`)
-    const uploadTask = uploadBytesResumable(storageRef,file);
-      
 
+
+    const uploadTask = uploadBytesResumable(storageRef,file);
       uploadTask.on(
           'state_changed',
            (snapshot)=>{
@@ -53,24 +55,33 @@ const UploadPosts = () => {
                 username: user.displayName,
                 imageUrl: url
             },
-            console.log(url)
+            navigator('/Home_posts')
             ))
            }
       )    
   }
-
+    
     return ( 
 
-        <div className="upladposts_whole">
-                <form onSubmit={formHandler}>
-                <input type='file'  ></input>
-                <input type='text' placeholder="Type the caption..." onChange={(e)=>setCaption(e.target.value)} ></input>
-                <button type="submit" >Upload</button>
-                <h3>uploaded { progress }% </h3>
+
+     
+         <Modal
+         open={open}
+         onClose={()=>toggle()}
+         >
+               <form onSubmit={formHandler}  className="upladposts_whole">
+                  <input type='file' className="input_file" ></input>
+                  <input type='text' placeholder="Type the caption..." onChange={(e)=>setCaption(e.target.value)} className="input_caption" ></input>
+                  <button type="submit" className="uploadposts_btn" ><strong>Upload</strong></button>
+                  {/* <h3 className="progress">uploaded { progress }% </h3> */}
+                  <progress value={progress} className="progress"></progress>
                 </form>
-               
+              
+         </Modal>
+        
+            
            
-        </div>
+      
         
 
      );

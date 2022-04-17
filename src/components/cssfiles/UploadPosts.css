@@ -3,10 +3,58 @@
 
 
 .upladposts_whole{
-    max-width: 300px;
+    position: relative;
+    max-width: 400px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #302b2be8;
+    border: 2px solid white;
+    height: 250px;
+    padding-top: 100px;
+    left: 40%;
+    top:30%;
+    border-radius: 20px;
     
+}
+
+.input_file{
+    position: absolute;
+    left: 100px;
+    font-weight: bold;
+}
+
+.input_caption{
+    position: absolute;
+    bottom:160px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    
+    border: none;
+   
+}
+
+
+
+.progress{
+    position: absolute;
+    bottom: 100px;
+}
+
+.uploadposts_btn{
+    position: absolute;
+    left: 150px;
+    top: 280px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    max-width: 130px;
+    padding:10px 30px;
+
+}
+
+.uploadposts_btn:hover{
+    background-color: skyblue;
 }
