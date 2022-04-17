@@ -43,6 +43,8 @@ const Profile = () => {
             }
             
             }} ><strong>logout</strong></button>
+            <button className="upload_btn" onClick={()=> navigate('/UploadPosts')} ><strong>Uploadposts </strong></button>
+            <button className="profile_btn">change profile </button>
       </div>
       </div>
       

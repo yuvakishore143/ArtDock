@@ -17,20 +17,20 @@
 
  .img_img{
     position: relative;
-    top: 70px;
-    left: 250px;
+    top: 150px;
+    left: 20px;
     max-height: 400px;
     
 }
 
 .profile_details{
     position: absolute;
-    top: 50%;
-    left: 37%;
+    left: 50%;
     font-size: 20px;
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    top: 30%;
 }
 
 
@@ -54,3 +54,41 @@
     
 }
 
+
+.upload_btn{
+    position: absolute;
+    bottom: 140px;
+    padding:10px 30px;
+    left: 65%;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    max-width: 130px;
+    
+
+
+}
+.upload_btn:hover{
+    color:white;
+    background-color:skyblue;
+    
+}
+
+.profile_btn{
+    position: absolute;
+    bottom: 140px;
+    padding:10px 30px;
+    left: 10%;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    max-width: 130px;
+    
+
+
+}
+.profile_btn:hover{
+    color:white;
+    background-color:skyblue;
+    
+}
