@@ -9,6 +9,7 @@ import Profile from './components/Profile'
 import Home_blogs from './components/Home_blogs';
 import Register from './components/Register';
 import Article from './components/Article';
+import UploadPosts from './components/UploadPosts';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/Profile' element={ <Profile/>}></Route>
             <Route path='/Register'element={<Register/>}></Route>
             <Route path='/Article'element={<Article/>}></Route>
+            <Route path='/UploadPosts'element={<UploadPosts/>}></Route>
             <Route exact path="*" element={<h1>page not found</h1>}>
             
               </Route>
