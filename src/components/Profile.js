@@ -2,7 +2,7 @@ import userEvent from "@testing-library/user-event";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import Header from "../partials/Header";
+import Profile_Header from "../partials/Headers/Profile_Header";
 import './cssfiles/Profile.css'
 import UploadPosts from "./UploadPosts";
 
@@ -26,7 +26,7 @@ const Profile = () => {
   
     return (
       <div className="profile_containers">
-      <Header/>
+         <Profile_Header/>
        <div className="profile_container">
           
           
@@ -34,8 +34,8 @@ const Profile = () => {
             
           
             <nav className="profile_details">
-           <div> <strong> Name : </strong>{user.displayName}</div>
-            <div><strong>Email :  </strong>{user.email}</div>
+           <div> <strong> {user.displayName}</strong></div>
+            <div><strong> {user.email} </strong></div>
             </nav>
             
             </div>

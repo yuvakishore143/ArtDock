@@ -5,8 +5,8 @@ import { db } from '../firebase'
 
 import './cssfiles/Home_posts.css'
 import Posts from "../partials/Posts";
-import Header from "../partials/Header";
-import Profile from "./Profile";
+import Posts_Header from "../partials/Headers/Posts_Header";
+
 
 const Home_posts = () => {
     const [ posts ,setPosts ]=useState([]);
@@ -25,7 +25,7 @@ const Home_posts = () => {
         <>
          
          <div className="home_posts" >
-         <Header style=' posts_style ' />
+         <Posts_Header style=' posts_style ' />
 
          {
              loading && <h1>loading...</h1>

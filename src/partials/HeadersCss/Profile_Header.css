@@ -2,27 +2,28 @@
 
 
 
-.header_container{
+
+.profile_header_container{
     font-size: 25px;
     text-align: right;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: black;
     
 }
 
-.anchors:hover {
+.profile_anchors:hover {
     
  
-    border-bottom:2px solid black;
+    border-bottom:2px solid white;
     
 }
 
-.anchors {
+.profile_anchors {
 
     text-decoration: none;
-    
-    color: black ;
+    color: white ;
     border-radius: 10px;
     padding:8px;
     margin:10px;
@@ -32,7 +33,7 @@
 
 }
 
-.tittle{
+.profile_tittle{
      color:rgb(255, 0, 0);
      font-family: Arial;
      font-size: 60px;
@@ -46,3 +47,15 @@
 
 }
 
+
+.profile_main_anchors{
+    color:red;
+    text-decoration: none;
+    border-radius: 10px;
+    padding:8px;
+    margin:10px;
+    font-size: 25px;
+    background-color: transparent;
+    font-weight: bold;
+
+}
