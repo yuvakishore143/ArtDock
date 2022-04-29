@@ -22,7 +22,7 @@ const Login = () => {
         const unsubscribe =  auth.onAuthStateChanged((authUser)=>{
              if(authUser){
                  setUser(authUser);
-                 console.log(authUser)
+                
              }else{
                  setUser(null)
              }

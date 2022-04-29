@@ -37,3 +37,33 @@
 .post_avatar{
 
 }
+
+
+.post_commentbox{
+  display: flex;
+  margin-top: 7px;
+}
+
+.post_comment{
+flex: 1;
+padding: 4px;
+border: none;
+
+}
+
+.post_button{
+ flex: 0;
+ border: none;
+ background-color: transparent;
+}
+
+.post_button:hover{
+   background-color: skyblue;
+ }
+
+.comments_link{
+  text-decoration: none;
+  font-weight: bold ;
+  margin-left: 10px;
+  color: burlywood;
+}

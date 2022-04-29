@@ -3,6 +3,7 @@ import { getAuth } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 
    const firebaseApp = firebase.initializeApp({
@@ -16,7 +17,7 @@ import { getStorage } from 'firebase/storage'
     measurementId: "G-84C6HNVWZR"
    });
 
-   const db =firebaseApp.firestore();
+   const db =getFirestore();
    const auth = getAuth(firebaseApp)
    const storage = getStorage(firebaseApp)
 

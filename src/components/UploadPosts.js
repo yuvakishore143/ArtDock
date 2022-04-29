@@ -18,9 +18,13 @@ const UploadPosts = ({ open , toggle } ) => {
  const navigator = useNavigate()
 
   useEffect (()=>{
-    auth.onAuthStateChanged((authUser)=>{
+ const unSubscribe=   auth.onAuthStateChanged((authUser)=>{
             setUser(authUser)
     })
+
+    return ()=>{
+         unSubscribe()
+    }
   })
     
   
@@ -60,7 +64,6 @@ const UploadPosts = ({ open , toggle } ) => {
            }
       )    
   }
-    
     return ( 
 
 
