@@ -16,7 +16,7 @@
 .profile_anchors:hover {
     
  
-    border-bottom:2px solid white;
+    border-bottom:1px solid white;
     
 }
 
@@ -29,7 +29,7 @@
     margin:10px;
     font-size: 25px;
     background-color: transparent;
-    font-weight: bold;
+   
 
 }
 
@@ -39,7 +39,7 @@
      font-size: 60px;
      text-decoration:none;
      text-align: left ;
-     font-weight: 700 ;
+     font-style: italic;
 }
 
 .tittleAnchor{
@@ -56,6 +56,6 @@
     margin:10px;
     font-size: 25px;
     background-color: transparent;
-    font-weight: bold;
+   
 
 }

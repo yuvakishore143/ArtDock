@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
-import { AuthErrorCodes, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+import {  createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import './cssfiles/Register.css'
-import firebase from 'firebase/compat/app';
+
 
 
 const Register = () => {
@@ -14,22 +14,24 @@ const Register = () => {
     const [loading,setLoading]=useState(false)
 
     const navigate  = useNavigate()
-
+     
      const register = async(e)=>{
+          if(email.slice(0,4) == 1214){
          e.preventDefault();
          setLoading(true)
         try{
        const userCredential =  await createUserWithEmailAndPassword( auth,email,password,username ) //send what you declared in usestate above
            await updateProfile(auth.currentUser,{displayName:username})
            navigate('/Main')
-           console.log(userCredential)
         }catch(e){
-           alert(e.message)
+           alert(e.message)  
         }
         setLoading(false)
+     }else{
+          alert('you are not authorized to access')
      }
-
-
+     }
+    
 
     return (
         <>

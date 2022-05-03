@@ -14,7 +14,7 @@
 .post_anchors:hover {
     
  
-    border-bottom:2px solid black;
+    border-bottom:1px solid black;
     
 }
 
@@ -27,17 +27,18 @@
     margin:10px;
     font-size: 25px;
     background-color: transparent;
-    font-weight: bold;
+
 
 }
 
 .post_tittle{
      color:rgb(255, 0, 0);
-     font-family: Arial;
+     font-family: Helvetica;
      font-size: 60px;
      text-decoration:none;
+     font-style: italic;
      text-align: left ;
-     font-weight: 700 ;
+    
 }
 
 
@@ -49,6 +50,6 @@
     margin:10px;
     font-size: 25px;
     background-color: transparent;
-    font-weight: bold;
+   
 
 }

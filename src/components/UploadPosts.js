@@ -14,6 +14,7 @@ const UploadPosts = ({ open , toggle } ) => {
   const [caption ,setCaption]=useState('')
   const [progress,setProgress]=useState(0)
   const [user,setUser]=useState('')
+  const [discription , setDiscription] = useState('')
   
  const navigator = useNavigate()
 
@@ -57,7 +58,8 @@ const UploadPosts = ({ open , toggle } ) => {
                 timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
                 caption : caption,
                 username: user.displayName,
-                imageUrl: url
+                imageUrl: url,
+                discription:discription
             },
             navigator('/Home_posts')
             ))
@@ -78,6 +80,10 @@ const UploadPosts = ({ open , toggle } ) => {
                   <button type="submit" className="uploadposts_btn" ><strong>Upload</strong></button>
                   {/* <h3 className="progress">uploaded { progress }% </h3> */}
                   <progress value={progress} className="progress"></progress>
+                  <textarea  placeholder="Type the info about this art and better give your work email so they can contact you through email " 
+                  className="discription" rows='5' cols='10'
+                  onChange={(e)=>setDiscription(e.target.value)}
+                  ></textarea>
                 </form>
               
          </Modal>

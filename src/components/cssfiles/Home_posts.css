@@ -1,6 +1,17 @@
 
 
 .home_posts{
-    background-color: white;
-    border-radius: 20px;
+    background-color: #fafafa;
+    
 }
+
+.posts_container{
+  
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 1100px;
+    left: 13%;
+   
+}
+
