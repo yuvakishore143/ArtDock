@@ -79,7 +79,7 @@
   border: 1px solid lightgray;
 }
 
-.like_image{
+.unlike_image{
  width: 20px;
  height:20px;
  margin-left: 10px;
@@ -90,4 +90,10 @@
   margin-left:10px ;
   background-color: transparent;
 
+}
+
+.like_image{
+  width: 20px;
+  height:20px;
+  margin-left: 10px;
 }

@@ -1,12 +1,16 @@
-import userEvent from "@testing-library/user-event";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import Profile_Header from "../partials/Headers/Profile_Header";
+import Header from "../partials/Headers/Header";
 import './cssfiles/Profile.css'
 import UploadPosts from "./UploadPosts";
 
 const Profile = () => {
+
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor="white"
+  
+  })
 
   const [user,setUser]=useState('')
   const [open , setOpen ]=useState(false)
@@ -26,7 +30,7 @@ const Profile = () => {
   
     return (
       <div className="profile_containers">
-         <Profile_Header/>
+         <Header profile_color='red'/>
        <div className="profile_container">
           
           

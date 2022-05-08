@@ -1,6 +1,5 @@
 import { Modal } from "@material-ui/core";
-import { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+
 import '../partials/Comments.css'
 
 

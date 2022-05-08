@@ -1,6 +1,6 @@
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
@@ -12,11 +12,15 @@ const Login = () => {
  
      const [email,setEmail]=useState('')
      const [password,setPassword]=useState('')
-     // const [username,setUsername]=useState('')
      const [loading,setLoading]=useState(false)
      const [user,setUser]=useState('')
 
    const navigate  = useNavigate();
+
+
+   
+  
+
 
    useEffect(()=>{
         const unsubscribe =  auth.onAuthStateChanged((authUser)=>{

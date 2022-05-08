@@ -6,27 +6,23 @@ import { auth, db } from '../firebase';
 import { collection, getDocs,addDoc, updateDoc, increment, doc} from 'firebase/firestore';
 import firebase from "firebase/compat/app";
 import Comments from "./Comments";
+import Likes from './Likes';
 
 
 
 
-const Posts = ({ postId, username,caption,imageUrl,discription,likess}) => {
 
+const Posts = ({ postId, username,caption,imageUrl,discription}) => {
 
-
+                       
     const [comment, setComment] = useState([])
     const [comments, setComments] = useState([])
+
     const [user,setUser]=useState('')
-    const [liked ,setLiked] = useState('')
     const [open,setOpen]=useState(false)
     const compRef = useRef(true)
     
-  
-    
 
-
-
-//  to get comments from firebase
 
     useEffect( () => {
           if(compRef.current){
@@ -66,7 +62,7 @@ const Posts = ({ postId, username,caption,imageUrl,discription,likess}) => {
             setComment('')
     }
 
-
+    
     //  to get the name of current user logged in
 
     useEffect(()=>{
@@ -75,28 +71,13 @@ const Posts = ({ postId, username,caption,imageUrl,discription,likess}) => {
         })
       })
 
+      // to open comment modal 
       const handleClick=()=>{
           setOpen(!open)
       }
 
-    const handleLike=(e)=>{
-            e.preventDefault();
-        
-         setLiked(!liked)
-         
-         if(liked){
-           
-             updateDoc(doc(db,'posts',postId),{
-                    like:increment(-1)
-                })
-                
-         }else{
-            updateDoc(doc(db,'posts',postId),{
-                like:increment(1)
-            })
-         }
-         
-    }
+      
+   
        
     
     return ( 
@@ -117,11 +98,8 @@ const Posts = ({ postId, username,caption,imageUrl,discription,likess}) => {
                             <div className='post_caption'><strong>caption: </strong>{ caption } </div>
 
                         <div style={{display:'flex',alignItems:'center', marginTop:'10px'  }}>
-                        {
-                            liked == true  ?  <img  className='like_image' src='images-removebg-preview.png' alt='like image' onClick={handleLike} disabled={onclick}></img> 
-                            : <img className='like_image' src='download-removebg-preview.png' alt='like image' onClick={handleLike}></img>
-                        }   
-                            <span>{likess}</span>
+                       
+                            <Likes postId={postId}  />
                              <Comments opened = {open} comments={comments} toggle={handleClick} />
                              <button className='comments_btn' onClick={handleClick}> Comments</button>
                           </div>

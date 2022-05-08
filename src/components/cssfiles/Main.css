@@ -9,6 +9,8 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        width: 1300px;
+        left: 7%;
         
             
         }
@@ -46,6 +48,7 @@
    text-decoration: none;
    margin-top: 16px;
    font-weight: bold;
+   left: -2%;
 }
 .main_blog:hover{
     
@@ -61,31 +64,23 @@
     width:220px;
     font-size: 25px;
     display:flex;
-    /* color:rgb(112, 148, 204); */
     color:white;
     margin-left:11%;
     font-weight: bold;
     margin-top:15px;
     text-decoration: none;
+    left: 1%;
 }
     .main_art:hover{
-      /* color:rgb(148, 172, 204); */
       border-bottom : 2px solid white;
       cursor:pointer;
     }
 
-    
-    
-  
-    
-
     .main_image{
-        /* position: absolute; */
         width:470px;
         max-width: 500px;
         height: 350px;
-        /* margin: -25% 0px 0px 52%;
-        background-color: red; */
+     
     }
 
     .main_blog_info{
@@ -95,7 +90,8 @@
         font-family: Greyton Script;
         margin-top:250px;
         margin-left:393px ;
-        width:700px
+        width:800px;
+
     }
 
    .main_sb_info{
@@ -103,9 +99,9 @@
     font-size: 40px;
     color:white;
     font-family: Greyton Script;
-    margin-top:570px;
+    margin-top:520px;
     margin-left:393px ;
-    width:700px
+    width:800px
    }
 
    .main_posts_info{
@@ -113,9 +109,9 @@
     font-size: 40px;
     color:white;
     font-family: Greyton Script;
-    margin-top:890px;
+    margin-top:800px;
     margin-left:393px ;
-    width:700px
+    width:800px
    }
 
    .main_security_info{
@@ -123,16 +119,16 @@
     font-size: 40px;
     color:white;
     font-family: Greyton Script;
-    margin-top:1190px;
+    margin-top:1100px;
     margin-left:393px ;
-    width:700px
+    width:800px
    }
 
 
    .main_info_title{
-    font-family: Segoe UI;
+    font-family: Roboto;
+    margin-left:5px;
    }
 
 }
 
-  
