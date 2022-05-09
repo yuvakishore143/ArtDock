@@ -3,7 +3,7 @@ import './Posts.css'
 import Avatar from '@material-ui/core/Avatar';
 import { useEffect, useRef, useState } from 'react';
 import { auth, db } from '../firebase';
-import { collection, getDocs,addDoc, updateDoc, increment, doc} from 'firebase/firestore';
+import { collection, getDocs,addDoc, updateDoc, increment, doc, onSnapshot, QuerySnapshot, query} from 'firebase/firestore';
 import firebase from "firebase/compat/app";
 import Comments from "./Comments";
 import Likes from './Likes';
@@ -26,18 +26,15 @@ const Posts = ({ postId, username,caption,imageUrl,discription}) => {
 
     useEffect( () => {
           if(compRef.current){
-        const colref =collection(db,'posts',postId,'comments')
    
-         getDocs(colref)
-        .then (snapshot=>{
-            setComments(snapshot.docs.map(doc=>({
+         onSnapshot(query(collection(db,'posts',postId,'comments')),(QuerySnapshot)=>{
+            setComments(QuerySnapshot.docs.map(doc=>({
                 key:doc.id,
                 data:  doc.data(),
                 timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-            })
-                
+            })  
               ))
-        })
+         })
     }
       return () => {
           compRef.current = false;
@@ -99,7 +96,7 @@ const Posts = ({ postId, username,caption,imageUrl,discription}) => {
 
                         <div style={{display:'flex',alignItems:'center', marginTop:'10px'  }}>
                        
-                            <Likes postId={postId}  />
+                            <Likes postId={postId} user={user.displayName}  />
                              <Comments opened = {open} comments={comments} toggle={handleClick} />
                              <button className='comments_btn' onClick={handleClick}> Comments</button>
                           </div>
