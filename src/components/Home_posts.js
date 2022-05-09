@@ -17,11 +17,11 @@ const Home_posts = () => {
     const [color, setcolor] = useState()
 
 //compref is used to make sure that the process is stopped once we moved to another page
-
-
-    // to set background color to each page individually we use  useLayoutEffect
+ 
+// to set background color to each page individually we use  useLayoutEffect
 useLayoutEffect(()=>{
     document.body.style.backgroundColor = 'white'
+   
   })
        
     useEffect(()=>{

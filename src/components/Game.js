@@ -1,6 +1,6 @@
 
 import { addDoc, collection, doc, getDoc, getDocs, increment, loadBundle, updateDoc } from "firebase/firestore";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
 import './cssfiles/Game.css';
@@ -13,7 +13,7 @@ const Game = () => {
   const [clicks , setClicks]=useState();
   const [user,setUser]=useState('')
  
-
+  const compref = useRef(true)
  
 
   
@@ -34,14 +34,18 @@ const Game = () => {
     })
     
    useEffect(()=>{
-      
-    getDocs(collection(db,'game'))
-    .then((snapshot)=>{
-        setClicks(snapshot.docs.map(doc =>(
-        doc.data().clicked
-           )))
-           
-    })
+      if(compref.current === true){
+        getDocs(collection(db,'game'))
+        .then((snapshot)=>{
+            setClicks(snapshot.docs.map(doc =>(
+            doc.data().clicked
+               )))
+               
+        })
+      }
+      return()=>{
+        compref.current = false;
+      }
   })
     
 
