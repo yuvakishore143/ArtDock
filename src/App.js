@@ -1,6 +1,6 @@
 
 
-import {BrowserRouter as  Router, Routes ,Route } from 'react-router-dom';
+import { Routes ,Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Home_posts from './components/Home_posts';
 import Login from './components/Login';
@@ -11,30 +11,73 @@ import Register from './components/Register';
 import Article from './components/Article';
 import UploadPosts from './components/UploadPosts';
 import Comments from './partials/Comments';
+import { auth } from './firebase';
+import { useEffect, useState } from 'react';
+import NotLoginErrorPage from './components/NotLoginErrorPage';
 
 
 function App() {
-  return (
-    <div className="App">
+
+  const [ loading , setLoading ]= useState(false)
+  const [user,setUser]=useState('')
+  
+  useEffect(()=>{
+      setLoading(true)
+      auth.onAuthStateChanged((authUser)=>{
+            setUser(authUser)
+            setLoading(false)
+    })
+
     
-       <Router>
-         <Routes>
-            <Route exact path='/' element={ <Login/>}></Route>
-            <Route path='/Main'element={<Main/>}></Route>
-            <Route path='/Home_posts' element={ <Home_posts/> }></Route>
-            <Route path='/Game' element={ <Game/>}></Route>
-            <Route path='/Profile' element={ <Profile/>}></Route>
-            <Route path='/Register'element={<Register/>}></Route>
-            <Route path='/Article'element={<Article/>}></Route>
-            <Route path='/UploadPosts'element={<UploadPosts/>}></Route>
-            <Route path='/Comments'element={<Comments/>}></Route>
-            <Route exact path="*" element={<h1>page not found</h1>}></Route>
-             
-         </Routes>
-       </Router>
+  },[])
+  
+  const navigator = useNavigate()
+
+ return(
+   <>
+
+
+   {}
+   {
+    
+       user ?   
+       <>
        
-    </div>
-  );
+       {loading && <img src='45124d126d0f0b6d8f5c4d635d466246.gif'></img>}
+               <Routes>
+                    {/* <Route exact path='/' element={<h1>HELLO WORLD</h1> }></Route>
+                    <Route path='/Register'element={<h1 style={{color:'red'}}>you are already logged in </h1>}></Route> */}
+                  <Route path='/'element={<Main/>}></Route>
+                  <Route path='/Main'element={<Main/>}></Route>
+                  <Route path='/Home_posts' element={ <Home_posts/> }></Route>
+                  <Route path='/Game' element={ <Game/>}></Route>
+                  <Route path='/Profile' element={ <Profile/>}></Route>
+                  <Route path='/Article'element={<Article/>}></Route>
+                  <Route path='/UploadPosts'element={<UploadPosts/>}></Route>
+                  <Route path='/Comments'element={<Comments/>}></Route>
+                  <Route exact path="*" element={<h1>page not found</h1>}></Route>
+                   
+               </Routes></>      
+      
+      :
+           <>
+               <Routes>
+                    <Route exact path='/' element={ <Login/>}></Route>
+                    <Route path='/Register'element={<Register/>}></Route>
+                    <Route exact path="*" element={<h1>page not found</h1>}></Route>
+                    <Route path='/Main'element={<NotLoginErrorPage />}></Route>
+                    <Route path='/Home_posts' element={ <NotLoginErrorPage />}></Route>
+                    <Route path='/Game' element={ <NotLoginErrorPage />  }></Route>
+                    <Route path='/Profile' element={ <NotLoginErrorPage />}></Route>
+                    <Route path='/Article'element={<NotLoginErrorPage /> }></Route>
+                    <Route path='/UploadPosts'element={<NotLoginErrorPage />}></Route>
+                    <Route path='/Comments'element={<NotLoginErrorPage />}></Route>
+               </Routes>
+           </>
+      }
+   </>
+
+ )
 }
 
 export default App;

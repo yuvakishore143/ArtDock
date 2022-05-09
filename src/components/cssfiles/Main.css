@@ -26,20 +26,22 @@
         .main_title1{
             margin-top: 0px;
             margin-bottom:-35px ;
-            
+            color:#f5a742;
+            font-family: 'Courgette', cursive;
     
         }
         .main_title2{
             margin-top: -30px;
             margin-left: -14px;
             margin-bottom:0px ;
-        
+            color:rgb(9, 101, 168);
+            
         }
  
      
 .main_blog{
    color:rgb(255, 255, 255);
-   width:66px;
+   width:141px;
    font-size: 25px;
    display:flex;
    margin-left: 35%;
@@ -52,7 +54,7 @@
 }
 .main_blog:hover{
     
-    border-bottom : 2px solid white;
+    border-bottom : 2px solid rgb(9, 101, 168);
     cursor:pointer;
   }
 
@@ -72,7 +74,7 @@
     left: 1%;
 }
     .main_art:hover{
-      border-bottom : 2px solid white;
+      border-bottom : 2px solid #f5a742;
       cursor:pointer;
     }
 
@@ -87,7 +89,7 @@
         position: absolute;
         font-size: 40px;
         color:white;
-        font-family: Greyton Script;
+        font-family: 'Cookie', cursive;
         margin-top:250px;
         margin-left:393px ;
         width:800px;
@@ -98,8 +100,8 @@
     position: absolute;
     font-size: 40px;
     color:white;
-    font-family: Greyton Script;
-    margin-top:520px;
+    font-family: 'Cookie', cursive;
+    margin-top:570px;
     margin-left:393px ;
     width:800px
    }
@@ -108,8 +110,8 @@
     position: absolute;
     font-size: 40px;
     color:white;
-    font-family: Greyton Script;
-    margin-top:800px;
+    font-family: 'Cookie', cursive;
+    margin-top:850px;
     margin-left:393px ;
     width:800px
    }
@@ -118,8 +120,8 @@
     position: absolute;
     font-size: 40px;
     color:white;
-    font-family: Greyton Script;
-    margin-top:1100px;
+    font-family: 'Cookie', cursive;
+    margin-top:1130px;
     margin-left:393px ;
     width:800px
    }
@@ -132,3 +134,10 @@
 
 }
 
+.paint_brush{
+    position: absolute;
+    left: 35%;
+    width:200px;
+    height: 200px;
+    top:7%
+}

@@ -52,9 +52,9 @@ useLayoutEffect(()=>{
         
          <div >
          <div className="home_posts" >
-      {!loading && <Header post_color='red' /> }   
+      {!loading && <Header post_color='red'  /> }   
          {
-              loading && <h1 style={{color:'white',position:"absolute",top:"40%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif"></img></h1>
+              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif"></img></h1>
          }
         <div className="posts_container">
            <div className="posts">
@@ -67,7 +67,7 @@ useLayoutEffect(()=>{
          </div> 
         
      </div>
-     <button onClick={()=>console.log(posts)}>hellosdf world</button>
+    
          
          </div>
      

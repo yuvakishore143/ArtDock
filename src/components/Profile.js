@@ -1,11 +1,16 @@
+import { collection, getDoc } from "firebase/firestore";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
 import './cssfiles/Profile.css'
 import UploadPosts from "./UploadPosts";
+import UploadProfile from "./UploadProfile";
 
 const Profile = () => {
+
+
+
 
   useLayoutEffect(() => {
     document.body.style.backgroundColor="white"
@@ -14,6 +19,7 @@ const Profile = () => {
 
   const [user,setUser]=useState('')
   const [open , setOpen ]=useState(false)
+  const [ profileOpen , setProfileOpen ] = useState(false)
 
   useEffect(()=>{
     auth.onAuthStateChanged((authUser)=>{
@@ -23,26 +29,31 @@ const Profile = () => {
 
   const navigate = useNavigate()
 
-  const handleUpload=()=>{
+
+  const handleUploadPost=()=>{
     setOpen(!open)
   }
   
+ 
+   const handleUploadProfile =()=>{
+    setProfileOpen(!profileOpen)
+   }
   
     return (
       <div className="profile_containers">
-         <Header profile_color='red'/>
+         <Header profile_color='red' name = {user.displayName}/>
        <div className="profile_container">
           
           
-            <div className="img_name">
+          <div className="img_name">
             
-          
+            <img src="" alt="profile picture"></img>
             <nav className="profile_details">
-           <div> <strong> {user.displayName}</strong></div>
-            <div><strong> {user.email} </strong></div>
+               <div> <strong> {user.displayName}</strong></div>
+               <div><strong> {user.email} </strong></div>
             </nav>
             
-            </div>
+        </div>
            
           <button className="btn" onClick={()=>{ 
             try{
@@ -51,14 +62,13 @@ const Profile = () => {
             }catch(e){
                alert(e.message)
             }
-            
+                     
             }} ><strong>logout</strong></button>
-
+            <button className="upload_btn" onClick={ handleUploadPost } ><strong>Uploadposts </strong></button>
+            <UploadPosts open ={ open } toggle = { handleUploadPost } />
+            <button className="profile_btn"  onClick={ handleUploadProfile }><strong>change profile </strong></button>
+            <UploadProfile  open = { profileOpen } toggle = { handleUploadProfile } />
             
-            
-            <button className="upload_btn" onClick={ handleUpload } ><strong>Uploadposts </strong></button>
-            <UploadPosts open ={ open } toggle = {handleUpload} />
-            <button className="profile_btn"><strong>change profile </strong></button>
             
       </div>
       </div>

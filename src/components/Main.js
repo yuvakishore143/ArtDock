@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import "./cssfiles/Main.css"
 import { Link } from 'react-router-dom';
 
-const Main = ({  backgroundColor , ui , syntax }) => {
+const Main = () => {
+
+   useLayoutEffect(()=>{
+      document.body.style.backgroundColor="black"
+   })
 
     return (
       <div className='main_whole'>
             
             <div className="main_box">
             <div className="main_title">
+               <img className='paint_brush' src='paint-brush-sketch-drawings-set-paintbrush-hand-drawn-vector-illustrations-part-of-set-2BWF529-removebg-preview.png' alt='paint brush'></img>
                <h1 className='main_title1'>ART </h1>
-               <h1 className='main_title2'>DOCK</h1>
+               <h1 className='main_title2'>DO<span style={{color:"rgb(29, 138, 210)"}}>CK</span></h1>
             </div>
             <img className='main_image' src='image.jpg'></img>
             </div>
         
         <Link to="/Home_posts"  className='main_art'>Browse for the Art</Link>
-        <Link to='/Home_blogs'  className="main_blog">Blogs</Link>
+        <Link to='/Game'  className="main_blog">Users count</Link>
 
        
         {/* <div className='main_line'></div> */}
