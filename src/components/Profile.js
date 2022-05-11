@@ -1,4 +1,4 @@
-import { collection, getDoc } from "firebase/firestore";
+import { addDoc, collection, getDoc } from "firebase/firestore";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase";
@@ -20,11 +20,18 @@ const Profile = () => {
   const [user,setUser]=useState('')
   const [open , setOpen ]=useState(false)
   const [ profileOpen , setProfileOpen ] = useState(false)
+  const [usernamed,setUsernamed ]=useState('')
+
 
   useEffect(()=>{
     auth.onAuthStateChanged((authUser)=>{
             setUser(authUser)
     })
+    
+    
+   setUsernamed(user.displayName)
+  
+    console.log(usernamed);
   })
 
   const navigate = useNavigate()
@@ -39,6 +46,20 @@ const Profile = () => {
     setProfileOpen(!profileOpen)
    }
   
+   useEffect(()=>{
+     
+      if(!usernamed == undefined ){
+        addDoc(collection(db,'allusers'),{
+          username:usernamed
+        })
+       }
+     
+   
+          
+   })
+
+
+
     return (
       <div className="profile_containers">
          <Header profile_color='red' name = {user.displayName}/>

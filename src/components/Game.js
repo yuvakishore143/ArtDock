@@ -1,5 +1,5 @@
 
-import { addDoc, collection, doc, getDoc, getDocs, increment, loadBundle, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, increment, loadBundle, onSnapshot, query, QuerySnapshot, updateDoc } from "firebase/firestore";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
@@ -33,21 +33,35 @@ const Game = () => {
       document.body.style.backgroundColor = 'white'
     })
     
-   useEffect(()=>{
-      if(compref.current === true){
-        getDocs(collection(db,'game'))
-        .then((snapshot)=>{
-            setClicks(snapshot.docs.map(doc =>(
-            doc.data().clicked
-               )))
+  //  useEffect(()=>{
+  //     if(compref.current === true){
+  //       getDocs(collection(db,'game'))
+  //       .then((snapshot)=>{
+  //           setClicks(snapshot.docs.map(doc =>(
+  //           doc.data().clicked
+  //              )))
                
+  //       })
+  //     }
+  //     return()=>{
+  //       compref.current = false;
+  //     }
+  // })
+
+
+    useEffect(()=>{
+      if(compref.current == true){
+              
+        onSnapshot(query(collection(db,'game')),(QuerySnapshot)=>{
+          setClicks(QuerySnapshot.docs.map(doc => (
+            doc.data().clicked
+          )))
         })
       }
       return()=>{
-        compref.current = false;
+        compref.current= false;
       }
-  })
-    
+    })
 
 
   const handleClick =async(e)=>{
@@ -108,7 +122,7 @@ const Game = () => {
               left:'45%',
               fontFamily:'Courgette, cursive',
               color:'skyblue'
-            }}>Total { clicks } user</h1>
+            }}>Total { clicks } users</h1>
            } 
              
         </div>
