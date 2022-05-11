@@ -1,23 +1,21 @@
 .register_form{
-    display: flex;
-    width: 500px;
-    height: 400px;
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  display: flex;
+  width: 60%;
+  height: 98%;
+  position: absolute;
   flex-direction: column;
-  margin:10px;
-  color:white;
+  color:red;
   align-items: center;
-  background-color: #ffffff10;
   justify-content: center;
-  border-radius: 30px;
- 
+  border-radius: 10000px 0px 0px 0px;
+  background-color: rgb(1, 176, 240);
+  left: 40%;
 }
+ 
+
 
 .register_email{
-  margin:20px;
+  margin: 5px 0px 20px 150px ;
   padding: 5px 30px 5px 10px;
   width: 250px;
   border-radius: 6px;
@@ -25,7 +23,7 @@
 
 
 .register_password{
-  margin:20px;
+  margin: 5px 0px 20px 150px ;
   padding: 5px 30px 5px 10px;
   width: 250px;
   border-radius: 6px;
@@ -33,13 +31,13 @@
 
 .register_username {
   width: 250px;
-  margin:20px;
+  margin:0px 0px 20px 150px ;
   padding: 5px 30px 5px 10px;
   border-radius: 6px;
 }
 
 .register_btn{
- 
+  margin-left:130px;
   width: 100px;
   padding: 7px 50px 7px 22px;
   text-decoration: none;
@@ -48,17 +46,48 @@
 }
 
 
-.register_title{
-  display: flex;
-  color:red;
-  justify-content: center;
-  font-size: 90px;
-  margin:20px
-}
 
 .register_link{
   margin:9px ;
+  text-decoration: none;
 }
 .register_link:hover{
   color:skyblue;
+}
+
+.register_text{
+  margin-left: 130px ;
+}
+
+.register_title1{
+  color:#f5a742;
+  font-size: 110px;
+  position: absolute;
+  z-index: 1;
+  top:15%;
+  left: 5%;
+}
+
+.register_title2{
+  color:rgb(9, 101, 168);
+  font-size: 140px;
+  position: absolute;
+  z-index: 1;
+  top :75%;
+  left:-5%;
+}
+
+.register_caption{
+  color:black;
+  font-size: 20px;
+  position: absolute;
+  z-index: 1;
+  top:65%;
+  left:5%;
+}
+.usernameerror{
+  color:red;
+  position: absolute;
+  top: 239px;
+  left:392px;
 }

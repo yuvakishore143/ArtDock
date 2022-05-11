@@ -27,11 +27,7 @@ const Profile = () => {
     auth.onAuthStateChanged((authUser)=>{
             setUser(authUser)
     })
-    
-    
    setUsernamed(user.displayName)
-  
-    console.log(usernamed);
   })
 
   const navigate = useNavigate()
@@ -53,9 +49,6 @@ const Profile = () => {
           username:usernamed
         })
        }
-     
-   
-          
    })
 
 

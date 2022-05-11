@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
 import {  createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
@@ -16,8 +16,17 @@ const Register = () => {
     const [ allusername , setAllusername ] = useState([]);
     const navigate  = useNavigate()
     const compRef = useRef(true)
-    const [exists , setExits ] = useState(false)
     
+    
+    const [ usernameerror , setUsernameerror ] = useState(false)
+
+
+
+    useLayoutEffect(() => {
+     
+     document.body.style.backgroundColor='rgb(229, 229, 229)'
+    
+    })
 
     useEffect(()=>{
        
@@ -41,11 +50,11 @@ const Register = () => {
 
      const register = async(e)=>{
           
-          if(email.slice(0,4) == 1214 && exists == false ){
+          if(email.slice(0,4) == 1214  ){
           e.preventDefault();
           setLoading(true)
                if(allusername.includes(username)){
-                       alert('username already exists')  
+                    setUsernameerror(true)
                        setLoading(false)
                }else{
 
@@ -58,13 +67,14 @@ const Register = () => {
                          })
                      
                     }catch(e){
-                         alert(e.message)  
+                    
                     }
                     setLoading(false)
                }
          
           }else  {
                     alert('you are not authorized to access')
+
           }
 
      }
@@ -76,7 +86,9 @@ const Register = () => {
 
     return (
         <>
-        <h1 className='register_title'> ART DOCK </h1>
+                        <h1 className='register_caption'>EXPLORE THE ART</h1>
+               <img className='paint_brush1' src='paint-brush-sketch-drawings-set-paintbrush-hand-drawn-vector-illustrations-part-of-set-2BWF529-removebg-preview.png' alt='paint brush'></img>
+         <h1 className='register_title1'> ART <div className='register_title2'><span style={{color:'rgb(29, 138, 210)'}}>DO</span>CK</div> </h1>
        <form className='register_form'>
            <input
                 value={username}
@@ -86,6 +98,7 @@ const Register = () => {
                 onChange={(e)=>{setUsername(e.target.value)}}
            >
            </input>
+           {usernameerror &&  <p className='usernameerror'>*Username already exits </p>}
            <input
                 value={email}
                 className='register_email'
@@ -103,7 +116,7 @@ const Register = () => {
            >
            </input>
            <button disabled={loading} className='register_btn' onClick={register}>Register</button>
-           <h3>Already have an account? <Link to='/' className='register_link'>Login</Link> </h3>
+           <h3 className='register_text'>Already have an account? <Link to='/' className='register_link'>Login</Link> </h3>
        </form>
         </>
         

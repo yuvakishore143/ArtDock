@@ -26,13 +26,7 @@ const Main = () => {
        
         {/* <div className='main_line'></div> */}
 
-        <div className='main_blog_info'>
-         <div className='main_info_title'><strong>BLOG</strong></div> 
-         <p style={{fontSize:'35px',margin:'5px'}}>
-            you can share all the events happening in the college with the students.
-            stay up to date with college events.
-         </p>  
-        </div>
+       
 
         <div className='main_sb_info'>
           <div className='main_info_title'><strong>SELL AND BUY</strong></div>
