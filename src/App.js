@@ -14,6 +14,9 @@ import Comments from './partials/Comments';
 import { auth } from './firebase';
 import { useEffect, useState } from 'react';
 import NotLoginErrorPage from './components/NotLoginErrorPage';
+import Myposts from './partials/Myposts';
+import UploadArticles from './partials/UploadArticle';
+import SingleArticle from './partials/SingleArticle';
 
 
 function App() {
@@ -56,6 +59,9 @@ function App() {
                   <Route path='/UploadPosts'element={<UploadPosts/>}></Route>
                   <Route path='/Comments'element={<Comments/>}></Route>
                   <Route exact path="*" element={<h1>page not found</h1>}></Route>
+                  <Route exact path="/Myposts" element={<Myposts/>}></Route>
+                  <Route exact path="/UploadArticle" element={<UploadArticles/>}></Route>
+                  <Route exact path="/Article/:id" element={<SingleArticle/>}></Route>
                    
                </Routes></>      
       
@@ -72,6 +78,9 @@ function App() {
                     <Route path='/Article'element={<NotLoginErrorPage /> }></Route>
                     <Route path='/UploadPosts'element={<NotLoginErrorPage />}></Route>
                     <Route path='/Comments'element={<NotLoginErrorPage />}></Route>
+                    <Route path='/Myposts'element={<NotLoginErrorPage />}></Route>
+                    <Route exact path="/UploadArticle" element={<NotLoginErrorPage/>}></Route>
+                    <Route exact path="/SingleArticle" element={<NotLoginErrorPage/>}></Route>
                </Routes>
            </>
       }

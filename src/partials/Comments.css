@@ -3,15 +3,18 @@
 
 .comments_whole{
     color:black;
-    background-color:lightgray;
+    background-color:whitesmoke;
     display: flex;
     flex-direction: column;
     width: 1000px;
-    margin-top: 50px;
+    margin-top: 110px;
     margin-left: 16%;
     padding-left: 30px;
     max-height: 600px;
     overflow: scroll;
+    min-width: 300px;
+    min-height: 500px;
+    border-radius: 10px;
 }
 
 

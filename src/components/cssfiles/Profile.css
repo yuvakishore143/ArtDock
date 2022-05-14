@@ -1,95 +1,107 @@
 
 
 
- .profile_container{
+  .profile_container{
      background-color: white;
-     position: absolute;
-     width: 50%;
-     height: 70%;
-     top: 20%;
-     left: 27%;
-     border-radius: 10px;
+     display: flex;
+     flex-direction: row ;
+     justify-content: space-around;
+     margin-top: 9em;
+     margin-left: 3em;
+     margin-right: 3em;
+     height: 700px;
+ } 
+
+ .wrapper1{
+
+      background-color: rgb(232, 232, 232);
+      width: 700px;
+      height: 400px;
+      font-weight: bold;
+      color:rgb(240, 164, 65);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  }
 
- .img_img{
-    position: relative;
-    top: 150px;
-    left: 20px;
-    max-height: 400px;
-    
-}
-.img_name{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
 
+.wrapper2{
+     display: flex;
+     flex-direction: column;
+ }
 .profile_details{
-    position: absolute;
-    left: 50%;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    top: 30%;
+    width: 30em;
+    height: 4em;
+    position: relative;
+    top:1em;
+    left: 40px;
+    font-size: 15px;
 }
-
-
-
-.btn{
-    position: absolute;
-    bottom: 20px;
-    padding:10px 30px;
-    left: 43%;
-    text-decoration: none;
-    border: none;
-    border-radius: 3px;
-    max-width: 100px;
-    
-
-
-}
-.btn:hover{
-    color:white;
-    background-color:red;
-    
-}
-
 
 .upload_btn{
-    position: absolute;
-    bottom: 140px;
-    padding:10px 30px;
-    left: 65%;
     text-decoration: none;
+    width: 100px; 
     border: none;
-    border-radius: 3px;
-    max-width: 130px;
-    
-
-
+    background-color: transparent;
+    position: relative;
+    padding:4px;
+    top:9.8em;
+    left: 15em;
+    font-weight: bold;
+    padding: 8px;
 }
 .upload_btn:hover{
-    color:white;
-    background-color:skyblue;
-    
+    color:rgb(6, 68, 114) ;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.btn{
+       border-radius: 5px;
+       width: 100px;
+       border: none;
+       background-color: transparent;
+       position: relative;
+       top:23em;
+       left: 7em;
+       padding: 8px;
+}
+.btn:hover{
+     cursor: pointer;
+     box-shadow: rgba(111, 103, 100, 0.2) 0px 7px 29px 0px;
 }
 
-.profile_btn{
-    position: absolute;
-    bottom: 140px;
-    padding:10px 30px;
-    left: 10%;
+.profile_myposts{
+    position: relative;
+    top: 7.4em;
+    left: 1em ;
     text-decoration: none;
-    border: none;
-    border-radius: 3px;
-    max-width: 130px;
-    
-
+    font-weight: bold;
+    width: 60px;
+    color: black;
 
 }
-.profile_btn:hover{
-    color:white;
-    background-color:skyblue;
+.profile_myposts:hover{
+    color: rgb(240, 164, 65);
     
+}
+
+.line{
+    position: relative;
+    top: 155px;
+    width:303px;
+    height: 1px;
+    background-color: black;
+}
+.profile_avatar{
+    position: relative;
+    top: -50px;
+    left:40px; 
+    padding: 10px;
+    padding-top: 8px;
+    margin-bottom: 0px;
+}
+
+.profileuserdetails{
+    position:absolute;
+    top:80px;
+    left:25px;
 }

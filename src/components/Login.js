@@ -65,7 +65,7 @@ const Login = () => {
                setEmptypass(true)
           }
             if( !email == '' ){
-               setErrormessage(e.message.slice(22,35))
+               setErrormessage(e.message.slice(22,40))
                setEmailerror(true)
             }
         }

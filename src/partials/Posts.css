@@ -7,7 +7,8 @@
      background-color: #ffffff ;
      border:1px solid lightgray;
      margin-left: 5%;    
-     
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ 
 }
 
 .post_img{
@@ -37,13 +38,13 @@
 .post_commentbox{
   display: flex;
   margin-top: 7px;
+
 }
 
 .post_comment{
   flex: 1;
   padding: 4px 4px 4px 10px;
   border: none;
-
 }
 
 .post_button{

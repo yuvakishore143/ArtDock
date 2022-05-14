@@ -1,10 +1,13 @@
 import { Modal } from "@material-ui/core";
+import { useLayoutEffect } from "react";
 
 import '../partials/Comments.css'
 
 
 const Comments = ({comments,opened,toggle}) => {
-
+    useLayoutEffect(()=>{
+        document.body.style.backgroundColor="white"
+    })
     return ( 
         <Modal
         open={opened}
