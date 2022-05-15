@@ -2,11 +2,12 @@
 import './Posts.css'
 import Avatar from '@material-ui/core/Avatar';
 import { useEffect, useRef, useState } from 'react';
-import { auth, db } from '../firebase';
+
 import { collection, addDoc, onSnapshot, query, orderBy} from 'firebase/firestore';
 import firebase from "firebase/compat/app";
 import Comments from "./Comments";
 import Likes from './Likes';
+import { auth, db } from '../../firebase';
 
 
 

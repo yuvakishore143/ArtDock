@@ -10,13 +10,13 @@ import Game from './components/Game';
 import Register from './components/Register';
 import Article from './components/Article';
 import UploadPosts from './components/UploadPosts';
-import Comments from './partials/Comments';
+import Comments from './partials/Posts/Comments';
 import { auth } from './firebase';
 import { useEffect, useState } from 'react';
 import NotLoginErrorPage from './components/NotLoginErrorPage';
-import Myposts from './partials/Myposts';
-import UploadArticles from './partials/UploadArticle';
-import SingleArticle from './partials/SingleArticle';
+import Myposts from './partials/Posts/Myposts';
+import UploadArticles from './partials/Article/UploadArticle';
+import SingleArticle from './partials/Article/SingleArticle';
 
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
                   <Route exact path="*" element={<h1>page not found</h1>}></Route>
                   <Route exact path="/Myposts" element={<Myposts/>}></Route>
                   <Route exact path="/UploadArticle" element={<UploadArticles/>}></Route>
-                  <Route exact path="/Article/:id" element={<SingleArticle/>}></Route>
+                  <Route exact path="/Article/:Id" element={<SingleArticle/>}></Route>
                    
                </Routes></>      
       

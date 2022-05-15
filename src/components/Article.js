@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+
 import { useEffect, useLayoutEffect, useState } from "react";
 import Header from "../partials/Headers/Header";
 import './cssfiles/Article.css'
 import { useNavigate } from 'react-router-dom';
-import { collection, getDocs, onSnapshot, orderBy, query, QuerySnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../firebase';
 
 
@@ -14,7 +14,7 @@ const Article = () => {
    const navigate = useNavigate()
       
     useLayoutEffect(()=>{
-        document.body.style.backgroundColor = 'white';
+        document.body.style.backgroundColor = 'rgb(250, 250, 250)';
       
       })
 
@@ -26,24 +26,26 @@ const Article = () => {
           key:doc.id
         })))
       })  
-     
       })
 
       
     return ( 
-        
-        <div className="article_whole">
-            <Header article_color='red'/>
-            <button onClick={()=>navigate('/UploadArticle')}>Upload Artilce</button>
+      <div>
+        <Header article_color='red'/>
+         <button onClick={()=>navigate('/UploadArticle')} className="UPLOAD_btn">Upload Artilce</button>
+        <div className="article_whole" >
             {
             data.map(({key , data }) =>(
-              <div key ={key}>
-               <div onClick={()=>navigate(`/Article/${key}`)} >{data.title} written by {data.writter}</div>
+              <div key ={key} className="singlearticle" onClick={()=>navigate(`/Article/${key}`)}>
+               <div  className='Arttitle' style={{color: data.titleColor }} >{data.title}</div>
+               <div className="Artwritter">{data.writter}</div>
+               <img src={data.ImageUrl} alt="Artcover photo" className="converphoto"></img>
               </div>
             ))
             }
             
          </div>
+      </div>
      );
 }
 

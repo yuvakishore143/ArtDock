@@ -8,7 +8,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 5px; */
     box-shadow: 0 5px 5px -6px #333;
     
 }
@@ -24,7 +23,6 @@
     padding:8px ;
     padding-bottom: 0px;
     margin:10px;
-    font-size: 25px;
     background-color: transparent;
 }
 
@@ -40,14 +38,15 @@
 }
 
 .tittle{
-    font-family: 'Courgette', cursive;
+
+     font-family: 'Playball';
      display: flex;
      flex-direction: row;
      padding-top: 0px;
      margin:2px;
      font-size: 50px;
      text-decoration:none;
-     font-style: italic;
+
 }
 
 .tittleAnchor{

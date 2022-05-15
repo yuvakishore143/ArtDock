@@ -1,7 +1,7 @@
 import { Modal } from "@material-ui/core";
 import { useLayoutEffect } from "react";
 
-import '../partials/Comments.css'
+import './Comments.css'
 
 
 const Comments = ({comments,opened,toggle}) => {

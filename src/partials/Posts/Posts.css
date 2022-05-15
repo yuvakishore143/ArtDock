@@ -12,8 +12,11 @@
 }
 
 .post_img{
+
+  min-width: 500px;
+  min-height: 300px;
   max-width: 500px;
-  max-height: 400px;
+  max-height: 300px;
   margin-left:10px ;
 }
 
@@ -75,7 +78,7 @@
 .post_discription{
   width: 45%;
   height: 400px;
-  margin:5% 3% 0% 4% ;
+  margin:3% 3% 0% 4% ;
   padding-left: 10px;
   border: 1px solid lightgray;
 }

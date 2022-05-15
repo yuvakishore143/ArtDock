@@ -1,4 +1,61 @@
+
+
+
+
 .article_whole{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;   
+    width: 1250px;
+    margin: 30px auto;
+    padding: 0;
+    right: 10px;
+
+}
+
+.singlearticle{
+    position: relative;;
+    margin:40px 90px 40px 0px ;
+    width: 350px;
+    height: 300px;
+    padding: 10px;
     background-color: white;
-   
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.singlearticle:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+.Arttitle{
+     padding-bottom: 5px;
+}
+.converphoto{
+    padding-top: 15px;
+    min-width: 350px;
+    max-width: 350px;
+    max-height: 200px;
+}
+.Artwritter{
+    position: relative;
+    left: 50px;
+}
+.UPLOAD_btn{
+    width: 130px;
+    padding:10px;
+    font-weight: bold;
+    position: relative;
+    margin: 10px;
+    left: 90%;
+    background-color: aqua;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
+}
+.UPLOAD_btn:hover{
+    background-color: orange;
 }

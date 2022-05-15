@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { auth, db } from '../firebase';
+import { auth, db } from '../../firebase';
 import { collection, getDocs,addDoc, updateDoc, increment, doc, collectionGroup, onSnapshot, query, QuerySnapshot} from 'firebase/firestore';
 import { connectStorageEmulator } from 'firebase/storage';
 

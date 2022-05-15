@@ -55,6 +55,7 @@ const Profile = () => {
                   <li> DONT POST ANYTHING UNRELATED TO ART</li>
                   <li> DONT BAD COMMENT ANY ONE ON THIS WEBSITE </li>
                   <li> USE THIS SITE TO SHOWCASE YOUR ART TO THE CAMPUS </li>
+                  <li> BE CAREFUL WHILE UPLOADING, YOU CANNOT DELETE ONCE UPLOADED </li>
                 </ul>
           </div>
           <div className="wrapper2">

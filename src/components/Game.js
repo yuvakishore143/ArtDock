@@ -1,10 +1,9 @@
 
-import { addDoc, collection, doc, getDoc, getDocs, increment, loadBundle, onSnapshot, query, QuerySnapshot, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc,increment, onSnapshot, query, updateDoc } from "firebase/firestore";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
-import './cssfiles/Game.css';
-import { useNavigate } from "react-router-dom";
+
 
 
 const Game = () => {
@@ -33,22 +32,7 @@ const Game = () => {
       document.body.style.backgroundColor = 'white'
     })
     
-  //  useEffect(()=>{
-  //     if(compref.current === true){
-  //       getDocs(collection(db,'game'))
-  //       .then((snapshot)=>{
-  //           setClicks(snapshot.docs.map(doc =>(
-  //           doc.data().clicked
-  //              )))
-               
-  //       })
-  //     }
-  //     return()=>{
-  //       compref.current = false;
-  //     }
-  // })
-
-
+ 
     useEffect(()=>{
       if(compref.current == true){
               
@@ -89,7 +73,7 @@ const Game = () => {
          
            {
               
-              played == false &&  <button style={{
+             played == false &&  <button style={{
                     position:'absolute',
                     top:'50%',
                     left:"45%",
@@ -100,7 +84,7 @@ const Game = () => {
                     fontStyle:'italic',
                     backgroundColor:'skyblue',
                     border:'none',
-                    boxShadow:"5px 10px orange",
+                    boxshadow: '0 5px 5px -6px #333',
                     color:'white'
         
                 }} onClick={handleClick}  > click </button>

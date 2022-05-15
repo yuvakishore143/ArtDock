@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { db } from '../firebase'
+import { db } from '../../firebase'
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import Posts from "../partials/Posts";
+import Posts from "./Posts";
 import { useLocation } from "react-router-dom";
 
 

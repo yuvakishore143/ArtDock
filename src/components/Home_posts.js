@@ -4,7 +4,7 @@ import { db } from '../firebase'
 
 
 import './cssfiles/Home_posts.css'
-import Posts from "../partials/Posts";
+import Posts from "../partials/Posts/Posts";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import Header from "../partials/Headers/Header";
 
