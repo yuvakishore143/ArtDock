@@ -1,6 +1,6 @@
 
-import { addDoc, collection, doc,increment, onSnapshot, query, updateDoc } from "firebase/firestore";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {  collection, doc,increment, onSnapshot, query, updateDoc } from "firebase/firestore";
+import { useEffect , useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
 
@@ -28,13 +28,8 @@ const Game = () => {
 
 
 
-    useLayoutEffect(()=>{
-      document.body.style.backgroundColor = 'white'
-    })
-    
- 
     useEffect(()=>{
-      if(compref.current == true){
+      if(compref.current === true){
               
         onSnapshot(query(collection(db,'game')),(QuerySnapshot)=>{
           setClicks(QuerySnapshot.docs.map(doc => (
@@ -73,7 +68,7 @@ const Game = () => {
          
            {
               
-             played == false &&  <button style={{
+             played === false &&  <button style={{
                     position:'absolute',
                     top:'50%',
                     left:"45%",
@@ -91,7 +86,7 @@ const Game = () => {
               
             }
             {
-              played == false &&   <h1
+              played === false &&   <h1
                                     style={{
                                       color:'#0965a8',
                                       position:'absolute',

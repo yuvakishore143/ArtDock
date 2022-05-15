@@ -1,12 +1,10 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import "./cssfiles/Main.css"
 import { Link } from 'react-router-dom';
 
 const Main = () => {
 
-   useLayoutEffect(()=>{
-      document.body.style.backgroundColor="black"
-   })
+
 
     return (
       <div className='main_whole'>
@@ -17,15 +15,20 @@ const Main = () => {
                <h1 className='main_title1'>ART </h1>
                <h1 className='main_title2'>DO<span style={{color:"rgb(29, 138, 210)"}}>CK</span></h1>
             </div>
-            <img className='main_image' src='image.jpg'></img>
+            <img className='main_image' src='image.jpg' alt='mainimage'></img>
             </div>
         
         <Link to="/Home_posts"  className='main_art'>Browse for the Art</Link>
         <Link to='/Game'  className="main_blog">Users count</Link>
 
        
-        {/* <div className='main_line'></div> */}
-
+        <div className='main_article_info'>
+          <div className='main_info_title'><strong>ARTICLES</strong></div>
+          <p style={{fontSize:'35px',margin:'5px'}}>
+            Articles on important events going on in the collage and articles about the topic everyone needs to know
+          </p>  
+       </div>
+        
        
 
         <div className='main_sb_info'>

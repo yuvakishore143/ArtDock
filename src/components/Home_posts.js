@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { db } from '../firebase'
 
@@ -18,11 +18,7 @@ const Home_posts = () => {
 //compref is used to make sure that the process is stopped once we moved to another page
  
 // to set background color to each page individually we use  useLayoutEffect
-useLayoutEffect(()=>{
-    document.body.style.backgroundColor = 'white'
-   
-  })
-       
+
     useEffect(()=>{
        
         if(compRef.current === true ){
@@ -52,7 +48,7 @@ useLayoutEffect(()=>{
          <div className="home_posts" >
       {!loading && <Header post_color='red'  /> }   
          {
-              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif"></img></h1>
+              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif" alt="loading img"></img></h1>
          }
         <div className="posts_container">
            <div className="posts">

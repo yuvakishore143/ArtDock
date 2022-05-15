@@ -27,6 +27,52 @@
     width:1000px;
     height:400px;
     position:absolute;
-    top:100px;
-    left:300px;
+    top:200px;
+    left:350px;
+}
+
+.titlepreview{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 400px;
+
+}
+
+.selcoverphoto{
+  position: relative;
+  font-weight: bold;
+  top:190px;
+  left: 20px;
+}
+
+.coverimg{
+    position: relative;
+    top: 200px;
+    left: 30px ;
+}
+.postBtn{
+    position: absolute;
+    padding: 10px;
+    width: 140px;
+    top: 650px;
+    left: 50%;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    background-color: skyblue;
+}
+
+.postBtn:hover{
+    background-color: orange;
+    color: white;
+
+}
+.preImg{
+    position: relative;
+    top:220px;
+    left: 50px;
+    max-width: 250px;
+    max-height: 300px;
+
 }

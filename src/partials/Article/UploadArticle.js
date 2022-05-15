@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from 'styled-components'
 import { ChromePicker } from "react-color";
 import '../Article/UploadArticle.css'
@@ -6,8 +6,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { auth, db, storage } from "../../firebase";
 import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
-import { getDownloadURL, ref, uploadBytes, uploadBytesResumable } from "firebase/storage";
-import { SketchFields } from "react-color/lib/components/sketch/SketchFields";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+
 
 
 
@@ -20,55 +20,66 @@ const UploadArticles = () => {
     const [ username , setusername ] = useState('')
     const [ img , setImg ] = useState('')
     const [ loading ,setLoading ] =useState(false)
+    const [ preImg  , setpreImg ] = useState('')
+
+
 
     const Navigate = useNavigate()
 
-    useLayoutEffect(()=>{
-        document.body.style.backgroundColor = 'white';
-      
-      })
+
 
      useEffect(()=>{
        auth.onAuthStateChanged(authuser=>{
          setusername(authuser.displayName)
        })
+       console.log(preImg)
      })
 
-          // const uploadfile = ()=>{
-          //   const image = img
-          //   handleSubmit(image)
-          // }
-     
      const handleSubmit =()=>{
 
-          setLoading(true)
-         
-          if(img === null) {return}else{
-        
-         const imgRef =  ref(storage,`CoverPhotos/${img.name}`)
-         const uploadTask = uploadBytesResumable(imgRef ,img)
           
+          if( title === '' ){
+            alert('title is missing')
+                  }else{
+                    if(content === ''){
+                      alert('content  is missing')
+                          }else{
+                            if(img === ''){
+                              alert('cover photo  is missing')
+                                    }else{
+                                      setLoading(true)
+                                            if(img === null) {return} else{
+                                          
+                                          const imgRef =  ref(storage,`CoverPhotos/${img.name}`)
+                                          const uploadTask = uploadBytesResumable(imgRef ,img)
+                                            
+                                  
+                                                uploadTask.on('state_changed',()=>{
+                                                getDownloadURL(uploadTask.snapshot.ref)
+                                                .then(url =>{
+                                  
+                                                    addDoc(collection(db,'Article'),{
+                                                      title:title,
+                                                      content:content,
+                                                      writter:username,
+                                                      timeStamp:firebase.firestore.FieldValue.serverTimestamp(),
+                                                      titleColor:titlecolor,
+                                                      ImageUrl :url
+                                                    })
+                                                    setLoading(false)
+                                                    setContent('')
+                                                    setTitle('')
+                                                    Navigate('/Article')
+                                  
+                                                })
+                                            })
+                                          } 
+                                  }
 
-               uploadTask.on('state_changed',()=>{
-               getDownloadURL(uploadTask.snapshot.ref)
-               .then(url =>{
 
-                  addDoc(collection(db,'Article'),{
-                    title:title,
-                    content:content,
-                    writter:username,
-                    timeStamp: firebase .firestore.FieldValue.serverTimestamp(),
-                    titleColor:titlecolor,
-                    ImageUrl :url
-                  })
-                  setLoading(false)
-                  setContent('')
-                  setTitle('')
-                  Navigate('/Article')
-
-               })
-          })
-        } //else end 
+                      }
+                    }
+           
      }
        
 
@@ -81,17 +92,23 @@ const UploadArticles = () => {
                                                                                                            
                                                                                                            }} />
           <img className="titleColorpickerimg"  onClick={(e)=>{ e.preventDefault()
-                                                               setOpenColorPicker(!openColorPicker)}} src='chromatic-removebg-preview.png'></img>                                                                         
+                                                               setOpenColorPicker(!openColorPicker)}} src='chromatic-removebg-preview.png' alt="colorpicker"></img>                                                                         
           { openColorPicker &&  <ChromePicker color={titlecolor} onChange={(updatedColor)=>setTitleColor(updatedColor.hex)} className="titlecolorpicker" ></ChromePicker> }
           <textarea className="contentbox" onChange={(e)=>setContent(e.target.value)} placeholder="content on the article" />
-          <input type="file" onChange={(e)=>setImg(e.target.files[0])} />
+          <div className="selcoverphoto">Select Cover photo:</div>
+          <input type="file" onChange={(e)=>{
+                                                  setImg(e.target.files[0])
+                                                  setpreImg(e.target.files[0]) 
+                                            }} className="coverimg" />
       </form>
-          <Div color={titlecolor}>{ title ? title :<strong> title</strong> }</Div>
+         <img src={preImg.name} className="preImg" alt="preIMg"></img>
+          <Div color={titlecolor} className='titlepreview'>{ title ? title :<strong> title</strong> }</Div>
 
           {
-              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d4662-unscreen.gif"></img></h1>
+              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d4662-unscreen.gif" alt="loading.."></img></h1>
          }
-      <button type="submit" onClick={handleSubmit}>Post</button>
+
+      <button type="submit" onClick={handleSubmit} className="postBtn">Post</button>
       </>
      );
 

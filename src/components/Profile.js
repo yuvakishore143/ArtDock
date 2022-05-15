@@ -1,6 +1,6 @@
-import { Avatar, Modal } from "@material-ui/core";
-import { addDoc, collection, getDoc } from "firebase/firestore";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { Avatar } from "@material-ui/core";
+import { addDoc, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
@@ -10,14 +10,10 @@ import UploadPosts from "./UploadPosts";
 
 const Profile = () => {
 
-  useLayoutEffect(() => {
-    document.body.style.backgroundColor="white"
-  
-  })
+
 
   const [user,setUser]=useState('')
   const [open , setOpen ]=useState(false)
-  const [ profileOpen , setProfileOpen ] = useState(false)
   const [usernamed,setUsernamed ]=useState('')
 
 
@@ -26,7 +22,7 @@ const Profile = () => {
             setUser(authUser)
     })
    setUsernamed(user.displayName)
-  })
+  },[user.displayName])
 
   const navigate = useNavigate()
 
@@ -37,7 +33,7 @@ const Profile = () => {
 
    useEffect(()=>{
      
-      if(!usernamed == undefined ){
+      if(!usernamed === undefined ){
         addDoc(collection(db,'allusers'),{
           username:usernamed
         })

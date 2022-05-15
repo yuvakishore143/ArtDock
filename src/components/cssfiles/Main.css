@@ -1,8 +1,6 @@
 
 @media  ( min-width: 760px){
     
-    
-
     .main_box{
         margin-top:8% ;
         position: relative;
@@ -20,14 +18,14 @@
             font-size: 100px;
             flex-direction: column;
         
-            color:white;
+           
         }
     
         .main_title1{
             margin-top: 0px;
             margin-bottom:-35px ;
             color:#f5a742;
-            font-family: 'Courgette', cursive;
+
     
         }
         .main_title2{
@@ -40,7 +38,7 @@
  
      
 .main_blog{
-   color:rgb(255, 255, 255);
+    color:black;
    width:141px;
    font-size: 25px;
    display:flex;
@@ -66,7 +64,7 @@
     width:220px;
     font-size: 25px;
     display:flex;
-    color:white;
+    color:black;
     margin-left:11%;
     font-weight: bold;
     margin-top:15px;
@@ -85,22 +83,21 @@
      
     }
 
-    .main_blog_info{
+    .main_article_info{
         position: absolute;
         font-size: 40px;
-        color:white;
-        font-family: 'Cookie', cursive;
         margin-top:250px;
         margin-left:393px ;
         width:800px;
 
     }
 
+
+  
+
    .main_sb_info{
     position: absolute;
     font-size: 40px;
-    color:white;
-    font-family: 'Cookie', cursive;
     margin-top:570px;
     margin-left:393px ;
     width:800px
@@ -109,8 +106,6 @@
    .main_posts_info{
     position: absolute;
     font-size: 40px;
-    color:white;
-    font-family: 'Cookie', cursive;
     margin-top:850px;
     margin-left:393px ;
     width:800px
@@ -119,8 +114,6 @@
    .main_security_info{
     position: absolute;
     font-size: 40px;
-    color:white;
-    font-family: 'Cookie', cursive;
     margin-top:1130px;
     margin-left:393px ;
     width:800px
