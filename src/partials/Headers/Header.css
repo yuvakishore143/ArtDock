@@ -36,7 +36,8 @@
 
 .user_img{
     position: relative;
-    top:3px
+    top:3px;
+    width:24px;
 }
 
 .tittle{

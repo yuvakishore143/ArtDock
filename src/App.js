@@ -59,7 +59,6 @@ function App() {
                   <Route exact path="/Myposts" element={<Myposts/>}></Route>
                   <Route exact path="/UploadArticle" element={<UploadArticles/>}></Route>
                   <Route exact path="/Article/:Id" element={<SingleArticle/>}></Route>
-                   
                </Routes></>      
       
       :

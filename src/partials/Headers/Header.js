@@ -10,7 +10,6 @@ const Header = ({ game_color,article_color,post_color,profile_color }) => {
      useLayoutEffect(()=>{
           document.body.style.backgroundColor = 'white'
          })
-       
 
   const [user,setUser]=useState('')
 
@@ -36,22 +35,12 @@ const Header = ({ game_color,article_color,post_color,profile_color }) => {
           </div>
                
                <div style={{display:'flex', flexDirection:'row', alignItems:"center"}}> 
-                    <Link to='/Game' className= 'anchors ' style={{color:game_color}}><img className='users_img' src='users.svg'></img>Users count</Link>
+                    <Link to='/Game' className= 'anchors ' style={{color:game_color}}>Users count</Link>
                     <Link to='/Home_posts' className='anchors'  style={{color:post_color}}>Posts</Link>   
                     <Link to='/Article' className='anchors' style={{color:article_color}}>Articles</Link>
-                    <Link to='/Profile' className='anchors'  style={{color:profile_color}}><img src='user.svg' className='user_img'></img>Profile</Link>
+                    <Link to='/Profile' className='anchors'  style={{color:profile_color}}><img src='account.png' className='user_img'></img>Profile</Link>
               </div>
-       
          </div>
-
-
-        
-        
-     
-              
-                
-
-    
               );
 
      
