@@ -1,5 +1,5 @@
-import { collection, doc, getDoc, onSnapshot, orderBy, query, QuerySnapshot } from "firebase/firestore";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase";
 import './SingleArticle.css'
@@ -19,10 +19,6 @@ const SingleArticle = () => {
  
  
 
-    useLayoutEffect(()=>{
-        document.body.style.backgroundColor = 'white'
-    })
-         
     return ( 
         <div className="Article_whole">
           <div style={{color: article.titleColor }} className="title">{article.title}</div>
