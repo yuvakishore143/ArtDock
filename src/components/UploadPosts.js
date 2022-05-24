@@ -15,6 +15,7 @@ const UploadPosts = ({ open , toggle } ) => {
   const [progress,setProgress]=useState(0)
   const [user,setUser]=useState('')
   const [discription , setDiscription] = useState('')
+  const [ email,setEmail ] = useState('')
   
  const navigator = useNavigate()
 
@@ -59,7 +60,8 @@ const UploadPosts = ({ open , toggle } ) => {
                 caption : caption,
                 username: user.displayName,
                 imageUrl: url,
-                discription:discription
+                discription:discription,
+                email:email
             },
             navigator('/Home_posts')
             ))
@@ -84,6 +86,8 @@ const UploadPosts = ({ open , toggle } ) => {
                   className="discription" rows='5' cols='10'
                   onChange={(e)=>setDiscription(e.target.value)}
                   ></textarea>
+                  <p className="emailnote">type your email for customers to contact you: </p>
+                  <input type='email' className="email_txt" onChange={(e)=>setEmail(e.target.value)}></input>
                 </form>
               
          </Modal>

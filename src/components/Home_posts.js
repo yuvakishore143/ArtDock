@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
 import { db } from '../firebase'
-
-
 import './cssfiles/Home_posts.css'
 import Posts from "../partials/Posts/Posts";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
@@ -33,14 +30,15 @@ const Home_posts = () => {
              setLoading(false)
          })
         }
-        console.log(posts);
         return()=>{
             compRef.current = false;
         }
         },[posts]);
 
-        
-         
+         const tothetop =()=>{
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+         }
 
     return ( 
         
@@ -58,19 +56,10 @@ const Home_posts = () => {
                 ))
                 }
             </div>
-         </div> 
-        
+         </div>  
      </div>
-    
-         
-         </div>
-     
-        
-        
-        
-     
-        
+       <button className="top_btn" onClick={tothetop}>top</button>
+         </div> 
      );
 }
- 
 export default Home_posts ;

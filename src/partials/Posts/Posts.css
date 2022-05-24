@@ -81,6 +81,7 @@
   margin:3% 3% 0% 4% ;
   padding-left: 10px;
   border: 1px solid lightgray;
+  white-space: pre-wrap ;
 }
 
 .unlike_image{

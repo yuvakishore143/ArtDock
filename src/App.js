@@ -1,7 +1,6 @@
 
 
 import { Routes ,Route, useNavigate } from 'react-router-dom';
-import './App.css';
 import Home_posts from './components/Home_posts';
 import Login from './components/Login';
 import Main from './components/Main';
@@ -30,8 +29,6 @@ function App() {
             setUser(authUser)
             setLoading(false)
     })
-
-    
   },[])
   
   const navigator = useNavigate()

@@ -9,11 +9,12 @@
      margin-top: 9em;
      margin-left: 3em;
      margin-right: 3em;
-     height: 700px;
+     height: 450px;
+     
+
  } 
 
  .wrapper1{
-
       background-color: rgb(232, 232, 232);
       width: 700px;
       height: 400px;
@@ -24,8 +25,14 @@
 
 
 .wrapper2{
+    position:relative;
      display: flex;
      flex-direction: column;
+     background-color: #938e94;
+     border-radius: 10px;
+     top: -30px;
+     white-space: pre-wrap;
+
  }
 .profile_details{
     width: 30em;
@@ -43,8 +50,8 @@
     background-color: transparent;
     position: relative;
     padding:4px;
-    top:9.8em;
-    left: 15em;
+    top:11.5em;
+    left: 18em;
     font-weight: bold;
     padding: 8px;
 }
@@ -61,7 +68,7 @@
        background-color: transparent;
        position: relative;
        top:23em;
-       left: 7em;
+       left: 13em;
        padding: 8px;
 }
 .btn:hover{
@@ -71,8 +78,8 @@
 
 .profile_myposts{
     position: relative;
-    top: 7.4em;
-    left: 1em ;
+    top: 9em;
+    left: 7em ;
     text-decoration: none;
     font-weight: bold;
     width: 60px;
@@ -84,24 +91,16 @@
     
 }
 
-.line{
-    position: relative;
-    top: 155px;
-    width:303px;
-    height: 1px;
-    background-color: black;
-}
+
 .profile_avatar{
     position: relative;
-    top: -50px;
-    left:40px; 
+    left:120px; 
     padding: 10px;
     padding-top: 8px;
-    margin-bottom: 0px;
 }
 
 .profileuserdetails{
     position:absolute;
-    top:80px;
-    left:25px;
+    top:130px;
+    left:55px;
 }

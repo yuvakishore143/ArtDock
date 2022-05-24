@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
-import './cssfiles/Profile.css'
+import './cssfiles/Profile.css';
 import UploadPosts from "./UploadPosts";
 
 
 const Profile = () => {
-
-
 
   const [user,setUser]=useState('')
   const [open , setOpen ]=useState(false)
@@ -63,8 +61,8 @@ const Profile = () => {
                             src="/static/images/avatar/1.jpg"
                         />
                     <div className="profileuserdetails">
-                        <div style={{marginBottom:'2px'}}> <strong>USERNAME<span></span>:</strong> {user.displayName}</div>
-                        <div><strong>EMAIL<span></span> :</strong> {user.email}</div>
+                        <div style={{marginBottom:'2px'}}><strong>USERNAME   <span></span>:</strong> {user.displayName}</div>
+                        <div><strong>EMAIL           <span></span> :</strong> {user.email}</div>
                     </div>
 
                 </nav>         
@@ -76,7 +74,7 @@ const Profile = () => {
                   alert(e.message)
                 }       
              }} ><strong>logout</strong></button>
-             <div className="line"></div>
+      
              <button className="upload_btn" onClick={ handleUploadPost } ><strong>Uploadposts </strong></button>
              <UploadPosts open ={ open } toggle = { handleUploadPost } />
              <Link to ='/Myposts' className="profile_myposts" state={{username:user.displayName}}>Myposts</Link>

@@ -7,3 +7,25 @@
     left: 13%;
 }
 
+.top_btn{
+
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    width:50px;
+    border-radius: 50%;
+}
+
+.top_btn:hover{
+    color: skyblue;
+    background-color: #555;
+}

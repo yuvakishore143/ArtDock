@@ -1,6 +1,6 @@
 
 import {  collection, doc,increment, onSnapshot, query, updateDoc } from "firebase/firestore";
-import { useEffect , useRef, useState } from "react";
+import { useEffect , useLayoutEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Header from "../partials/Headers/Header";
 
@@ -14,6 +14,10 @@ const Game = () => {
  
   const compref = useRef(true)
  
+
+  useLayoutEffect(()=>{
+   document.body.style.backgroundColor = '#96caef'
+  })
 
   
   useEffect (()=>{

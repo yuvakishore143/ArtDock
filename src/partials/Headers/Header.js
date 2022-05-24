@@ -2,12 +2,15 @@
 
 import '../Headers/Header.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { auth } from '../../firebase';
 
 const Header = ({ game_color,article_color,post_color,profile_color }) => {
 
-
+     useLayoutEffect(()=>{
+          document.body.style.backgroundColor = 'white'
+         })
+       
 
   const [user,setUser]=useState('')
 

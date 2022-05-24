@@ -92,9 +92,6 @@
 
     }
 
-
-  
-
    .main_sb_info{
     position: absolute;
     font-size: 40px;
@@ -134,3 +131,67 @@
     height: 200px;
     top:7%
 }
+
+@media (max-width:760px ){
+
+
+
+        .main_image{
+            display: none;     
+        }
+        .main_title{
+         font-size: 30px;
+         display: flex;
+         flex-direction: row;
+        }
+    
+        .main_title1{
+            margin-left: 10px;
+        }
+        .main_title2{
+
+            
+        }
+        .paint_brush{
+            position: absolute;
+            width:80px;
+            height:80px;
+            top:7%;
+            left: 400px;
+        }
+        .main_article_info{
+            position: absolute;
+            font-size: 40px;
+            margin-top: 50px;
+        }
+    
+       .main_sb_info{
+        position: absolute;
+        font-size: 40px;
+        margin-top: 200px;
+       }
+    
+       .main_posts_info{
+        position: absolute;
+        font-size: 40px;
+        margin-top: 350px;
+       }
+    
+       .main_security_info{
+        position: absolute;
+        font-size: 40px;
+        margin-top: 500px;
+       }
+    
+    
+       .main_info_title{
+        font-family: Roboto;
+        margin-left:5px;
+        margin-top: 750px;
+       }
+
+
+
+}
+
+
