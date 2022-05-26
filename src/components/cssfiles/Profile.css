@@ -28,7 +28,7 @@
     position:relative;
      display: flex;
      flex-direction: column;
-     background-color: #938e94;
+     background-color: #a7a7a7;
      border-radius: 10px;
      top: -30px;
      white-space: pre-wrap;
@@ -45,20 +45,23 @@
 
 .upload_btn{
     text-decoration: none;
-    width: 100px; 
+    width: 100px;
     border: none;
     background-color: transparent;
     position: relative;
     padding:4px;
-    top:11.5em;
+    top:11.7em;
     left: 18em;
     font-weight: bold;
     padding: 8px;
+    border-radius:5px;
 }
 .upload_btn:hover{
-    color:rgb(6, 68, 114) ;
+    background-color: rgb(240, 164, 65);
+    color: white;
     cursor: pointer;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
 
 }
 .btn{
@@ -68,26 +71,36 @@
        background-color: transparent;
        position: relative;
        top:23em;
-       left: 13em;
+       left: 12em;
        padding: 8px;
 }
 .btn:hover{
      cursor: pointer;
      box-shadow: rgba(111, 103, 100, 0.2) 0px 7px 29px 0px;
+     color: white;
+     background-color: red;
 }
 
 .profile_myposts{
     position: relative;
-    top: 9em;
-    left: 7em ;
+    top: 8.8em;
+    left: 6em ;
     text-decoration: none;
     font-weight: bold;
-    width: 60px;
+    width: 100px; 
+    height: 22px;
     color: black;
+    padding: 3px;
+    padding-bottom: 5.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 
 }
 .profile_myposts:hover{
-    color: rgb(240, 164, 65);
+   color: white;
+   background-color: rgb(240, 164, 65);
     
 }
 
@@ -103,4 +116,5 @@
     position:absolute;
     top:130px;
     left:55px;
+    font-size: 17px;
 }

@@ -20,7 +20,7 @@ const UploadArticles = () => {
     const [ username , setusername ] = useState('')
     const [ img , setImg ] = useState('')
     const [ loading ,setLoading ] =useState(false)
-    const [ preImg  , setpreImg ] = useState('')
+    
 
 
 
@@ -32,7 +32,6 @@ const UploadArticles = () => {
        auth.onAuthStateChanged(authuser=>{
          setusername(authuser.displayName)
        })
-       console.log(preImg)
      })
 
      const handleSubmit =()=>{
@@ -75,8 +74,6 @@ const UploadArticles = () => {
                                             })
                                           } 
                                   }
-
-
                       }
                     }
            
@@ -85,12 +82,11 @@ const UploadArticles = () => {
 
     return ( 
       <>
-      
-      
+
       <form>
-          <input type="text" onChange={(e)=>setTitle(e.target.value)}  placeholder="type the title" className="titlebox" style={{
+          <input type="text" onChange={(e)=>setTitle(e.target.value)}  placeholder="type the title" className="titlebox"  />
+                                                                                                      
                                                                                                            
-                                                                                                           }} />
           <img className="titleColorpickerimg"  onClick={(e)=>{ e.preventDefault()
                                                                setOpenColorPicker(!openColorPicker)}} src='chromatic-removebg-preview.png' alt="colorpicker"></img>                                                                         
           { openColorPicker &&  <ChromePicker color={titlecolor} onChange={(updatedColor)=>setTitleColor(updatedColor.hex)} className="titlecolorpicker" ></ChromePicker> }
@@ -98,10 +94,10 @@ const UploadArticles = () => {
           <div className="selcoverphoto">Select Cover photo:</div>
           <input type="file" onChange={(e)=>{
                                                   setImg(e.target.files[0])
-                                                  setpreImg(e.target.files[0]) 
+                                                  
                                             }} className="coverimg" />
       </form>
-         <img src={preImg.name} className="preImg" alt="preIMg"></img>
+         
           <Div color={titlecolor} className='titlepreview'>{ title ? title :<strong> title</strong> }</Div>
 
           {

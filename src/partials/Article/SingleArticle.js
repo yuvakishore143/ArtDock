@@ -23,8 +23,7 @@ const SingleArticle = () => {
         <div className="Article_whole">
           <div style={{color: article.titleColor }} className="title">{article.title}</div>
           <div className="writter">{article.writter}</div>
-          <div className="content">{article.content}</div>
-          
+          <div className="content">{article.content}</div> 
         </div>
      );
 }

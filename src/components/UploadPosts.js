@@ -16,6 +16,7 @@ const UploadPosts = ({ open , toggle } ) => {
   const [user,setUser]=useState('')
   const [discription , setDiscription] = useState('')
   const [ email,setEmail ] = useState('')
+  const [ clicked , setClicked ] = useState(false)
   
  const navigator = useNavigate()
 
@@ -23,7 +24,6 @@ const UploadPosts = ({ open , toggle } ) => {
  const unSubscribe=   auth.onAuthStateChanged((authUser)=>{
             setUser(authUser)
     })
-
     return ()=>{
          unSubscribe()
     }
@@ -32,6 +32,7 @@ const UploadPosts = ({ open , toggle } ) => {
   
     const formHandler = (e) =>{
         e.preventDefault();
+          setClicked(true)
           const file = e.target[0].files[0];
            handleUpload(file)
   }
@@ -79,7 +80,7 @@ const UploadPosts = ({ open , toggle } ) => {
                <form onSubmit={formHandler}  className="upladposts_whole">
                   <input type='file' className="input_file" ></input>
                   <input type='text' placeholder="Type the caption..." onChange={(e)=>setCaption(e.target.value)} className="input_caption" ></input>
-                  <button type="submit" className="uploadposts_btn" ><strong>Upload</strong></button>
+                  <button type="submit" className="uploadposts_btn" disabled={ clicked } ><strong>Upload</strong></button>
                   {/* <h3 className="progress">uploaded { progress }% </h3> */}
                   <progress value={progress} className="progress"></progress>
                   <textarea  placeholder="Type the info about this art and better give your work email so they can contact you through email " 

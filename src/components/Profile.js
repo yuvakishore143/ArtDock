@@ -77,7 +77,7 @@ const Profile = () => {
       
              <button className="upload_btn" onClick={ handleUploadPost } ><strong>Uploadposts </strong></button>
              <UploadPosts open ={ open } toggle = { handleUploadPost } />
-             <Link to ='/Myposts' className="profile_myposts" state={{username:user.displayName}}>Myposts</Link>
+             <Link to ='/Myposts' type="button" className="profile_myposts" state={{username:user.displayName}}>Myposts</Link>
        </div>
            </div>
       </div>
