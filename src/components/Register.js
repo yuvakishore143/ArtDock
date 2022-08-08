@@ -50,7 +50,6 @@ const Register = () => {
 
      const register = async(e)=>{
           
-          if(email.slice(0,4) == 1214  ){
           e.preventDefault();
           setLoading(true)
                if(allusername.includes(username)){
@@ -72,10 +71,7 @@ const Register = () => {
                     setLoading(false)
                }
          
-          }else  {
-                    alert('you are not authorized to access')
-
-          }
+        
 
      }
  
