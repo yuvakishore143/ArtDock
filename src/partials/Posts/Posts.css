@@ -1,23 +1,25 @@
-.post_container{
-    
-     display: flex;
-     flex-direction: row;
-     margin-top: 100px;
-     width: 1000px;
-     background-color: #ffffff ;
-     border:1px solid lightgray;
-     margin-left: 5%;    
-     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+.container{
+  position: relative;
+  margin-top: 100px;
+  left: 24%;
+  width: 550px;
+
  
+}
+.container:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+  cursor: pointer;
+  border: none;
 }
 
 .post_img{
-
   min-width: 500px;
   min-height: 300px;
   max-width: 500px;
+  max-width: 400px;
   max-height: 300px;
-  margin-left:10px ;
+  margin-left:22px ;
 }
 
 .post_username{
@@ -27,16 +29,14 @@
     font-family:  "Segoe UI";
 }
 .post_caption{
-     margin:10px 0px 10px 10px; 
+     margin:10px 0px 10px 10px;
 }
 
 .post_header{
     display: flex;
     align-items: center;
     margin-left: 10px;
-    
 }
-
 
 .post_commentbox{
   display: flex;
@@ -66,13 +66,6 @@
   margin-left: 10px;
   color: burlywood;
   border: none;
-}
-
-.post_info{
-  display: flex;
-  flex-direction: column;
-  
-  width: 50%;
 }
 
 .post_discription{

@@ -41,25 +41,25 @@ const Home_posts = () => {
          }
 
     return ( 
-        
-         <div >
-         <div className="home_posts" >
-      {!loading && <Header post_color='red'  /> }   
-         {
-              loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif" alt="loading img"></img></h1>
-         }
-        <div className="posts_container">
-           <div className="posts">
-             {
-                posts.map(({id,post})=>(
-                    <Posts key={id} postId={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} discription={post.discription} />
-                ))
-                }
-            </div>
-         </div>  
-     </div>
-       <button className="top_btn" onClick={tothetop}>top</button>
-         </div> 
+            <div>
+                {!loading && <Header post_color='red'  /> }   
+                <div className="home_posts" >
+                    
+                    {
+                        loading && <h1 style={{color:'white',position:"absolute",top:"35%",left:"40%"}}><img style={{width:'300px'}} src="45124d126d0f0b6d8f5c4d635d466246.gif" alt="loading img"></img></h1>
+                    }
+                    <div className="posts_container">
+                        <div className="posts">
+                            {
+                                posts.map(({id,post})=>(
+                                    <Posts key={id} postId={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} discription={post.discription} />
+                                ))
+                                }
+                        </div>
+                    </div>  
+                </div>
+                <button className="top_btn" onClick={tothetop}>top</button>
+             </div> 
      );
 }
 export default Home_posts ;

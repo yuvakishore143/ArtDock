@@ -15,6 +15,7 @@ const SingleArticle = () => {
        .then((doc)=>{
            setArticle(doc.data())
        })
+       console.log(article)
    })
  
  

@@ -16,6 +16,7 @@ import NotLoginErrorPage from './components/NotLoginErrorPage';
 import Myposts from './partials/Posts/Myposts';
 import UploadArticles from './partials/Article/UploadArticle';
 import SingleArticle from './partials/Article/SingleArticle';
+import SinglePost from './partials/Posts/SinglePost'
 
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
                     <Route path='/Register'element={<h1 style={{color:'red'}}>you are already logged in </h1>}></Route> */}
                   <Route path='/'element={<Main/>}></Route>
                   <Route path='/Main'element={<Main/>}></Route>
-                  <Route path='/Home_posts' element={ <Home_posts/> }></Route>
+                  <Route path='/Home_posts/' element={ <Home_posts/> }></Route>
                   <Route path='/Game' element={ <Game/>}></Route>
                   <Route path='/Profile' element={ <Profile/>}></Route>
                   <Route path='/Article'element={<Article/>}></Route>
@@ -59,6 +60,7 @@ function App() {
                   <Route exact path="/Myposts" element={<Myposts/>}></Route>
                   <Route exact path="/UploadArticle" element={<UploadArticles/>}></Route>
                   <Route exact path="/Article/:Id" element={<SingleArticle/>}></Route>
+                  <Route exact path="/posts/:Id" element={<SinglePost />}></Route>
                </Routes></>      
       
       :

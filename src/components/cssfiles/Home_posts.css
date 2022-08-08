@@ -1,14 +1,8 @@
 
 
 
-.posts_container{
-    position: relative;
-    width: 1100px;
-    left: 13%;
-}
 
 .top_btn{
-
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -28,4 +22,13 @@
 .top_btn:hover{
     color: skyblue;
     background-color: #555;
+}
+.posts{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+
+}
+
+.home_posts{
+    width: 1300px;
 }
